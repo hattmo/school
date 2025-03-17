@@ -1,0 +1,23 @@
+
+Assignment #3
+Due: March 17
+Visit the NASA website:
+https://strs.grc.nasa.gov/repository/forms/cocomo-calculation/
+to access COCOMO Calculation.
+Illustrate the use of the model by creating a sample project for an embedded system.
+You should provide a narrative describing the type of project you are estimating, its
+mode, its size and the project factors which dictate your choice of attributes.
+(Your narrative should attempt to justify the choice of attributes used in the model)
+Generate and turn in the estimation report from the tool for your sample project.
+Re-estimate your project under “worst case scenario” (i.e. set all attributes to worst case
+conditions). Discuss how the estimate changes.
+Re-estimate your project under "ideal conditions”. Discuss how the estimate changes.
+In CSE 566, all work must be done individually unless otherwise instructed and
+must be original. Papers must be written in your own words (no cutting and
+pasting). References to all work must be cited where used in the paper and included
+in a bibliography at the end of the paper. Papers will be checked with anti-
+plagiarism software.
+All students must familiarize themselves and adhere to the ASU Academic Integrity
+Policy
+https://provost.asu.edu/index.php?q=academicintegrity
+
