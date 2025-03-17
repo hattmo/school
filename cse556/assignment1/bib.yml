@@ -1,0 +1,9 @@
+Lucidchart:
+  type: Web
+  title: Lucidchart
+  url: https://lucid.app/
+Wikipedia:
+  type: Web
+  title: Value-stream mapping
+  url: https://en.wikipedia.org/wiki/Value-stream_mapping
+  date: 2024-09-01
