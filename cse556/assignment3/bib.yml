@@ -1,9 +1,7 @@
-Lucidchart:
+STRS:
   type: Web
-  title: Lucidchart
-  url: https://lucid.app/
-Wikipedia:
-  type: Web
-  title: Value-stream mapping
-  url: https://en.wikipedia.org/wiki/Value-stream_mapping
-  date: 2024-09-01
+  title: Space Telecommunications Radio System, COCOMO Calculator
+  organization: NASA
+  editor: Rachel Dudukovich
+  date: 2021-01-15
+  url: https://strs.grc.nasa.gov/repository/forms/cocomo-calculation/
