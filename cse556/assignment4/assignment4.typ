@@ -1,75 +1,115 @@
 #set page(
-	paper: "us-letter",
-	numbering: "1",
-	margin: 0.5in
+    paper: "us-letter",
+    numbering: "1",
+    margin: 0.5in
 )
 
 #set text(
-	font: "Times New Roman"
+    font: "Times New Roman"
 )
 
-
 #align(center)[
-	#text(20pt)[CSE 566 - Homework \#4 Risk Factor Analysis]
-	#linebreak()
-	#text(16pt)[Matthew Howard]
+    #text(20pt)[CSE 566 - Homework #4: Risk Factor Analysis]
+    #linebreak()
+    #text(16pt)[Matthew Howard]
 ]
 
 
-= Part 1: Hypothetical Scenario and Risk Analysis
+= Background
 
-== Background
+*DesertMedTech* (Phoenix, Arizona): A mid-sized company focused on cloud-enabled medical devices. The team employs Agile methodologies, specifically Scrum, with two-week sprints to ensure rapid development. Collaboration is a priority, with face-to-face interactions being emphasized. The company has a team of 25 engineers dedicated to creating innovative healthcare solutions.
 
-*DesertMedTech* (Phoenix, Arizona): A mid-sized company specializing in clound enabled medical devices, employing Agile methodologies for rapid development. DesertMedTech uses Scrum with 2-week sprints and emphasizes face-to-face collaboration. The team consists of 25 engineers focused on innovative healthcare solutions.
+*CodeCrafters Ukraine* (Lviv, Ukraine): A large software development firm with over 300 developers. The company specializes in healthcare software and adheres to GDPR and HIPAA compliance standards. CodeCrafters Ukraine has extensive experience in distributed software development and excels in cross-time-zone collaboration.
 
-*CodeCrafters Ukraine* (Lviv, Ukraine): A large software development firm with over 300 developers, experienced in healthcare software and compliance with GDPR and HIPAA standards. CodeCrafters Ukraine excels in distributed software development (DSD) and frequently collaborates across time zones.
+*Project*: The two companies are working together to develop a wearable cardiac health monitoring device that integrates with a cloud-based analytics platform. DesertMedTech is handling hardware design and cloud integration, while CodeCrafters Ukraine is responsible for firmware development and the web-based patient portal.
 
-*Project*: The two companies are collaborating on a wearable device for monitoring cardiac health, integrated with a cloud-based analytics platform. DesertMedTech is responsible for hardware design and cloud integration, while CodeCrafters Ukraine develops the firmware and web-based patient portal.
+= Part 1: Risk Analysis
 
-== Selected Risks
 #table(
-	columns: (1fr,2fr),
-	align: (left,left),
-	inset: 5pt,
-	fill: (_, y) => if calc.odd(y) { rgb("EAF2F5") },
-	stroke: rgb("21222C"),
-	[*Requirement Elicitation* #linebreak() Unclear Requirements in Multiple Development Sites],[Miscommunication regarding "real-time data synchronization" due to geographic separation and differing Agile practices.],
-	[*Objective Statement* #linebreak() Ambiguity in Objective Meaning Due to Cultural Differences],["Data security" priorities differ: DesertMedTech emphasizes HIPAA compliance, while CodeCrafters Ukraine focuses on GDPR standards.],
-	[*Design* #linebreak() Design Inconsistency],[DesertMedTech's cloud systems require high computational power, conflicting with CodeCrafters Ukraine's lightweight firmware design for wearables.],
-	[*Coding* #linebreak() Lack of Coordination],[Time zone differences delay code reviews, leading to integration challenges during paired programming sessions.],
-	[*Testing* #linebreak() Unavailability of Real Testing Data],[Privacy regulations restrict access to patient datasets for cross-border testing, complicating quality assurance.],
-	[*Release and Deployment* #linebreak() Difference in Agile Practices at Sites],[DesertMedTech uses Jira for sprint tracking, while CodeCrafters Ukraine relies on Trello, causing misalignment in workflows.],
-	[*Project Management* #linebreak() Exceeded Project Time],[Onboarding delays arise due to CodeCrafters Ukraine's unfamiliarity with FDA compliance requirements.],
-	[*Communication* #linebreak() Misinterpretation of Message],[Ambiguous Slack messages regarding "critical bug fixes" lead to conflicting priorities between teams.],
-	[*Technology-Based* #linebreak() Improper Utilization of Tools],[Inadequate training on shared CI/CD tools results in frequent build failures.],
-	[*External Stakeholder* #linebreak() Dependency on Third Party],[A subcontractor hired by CodeCrafters Ukraine delivers firmware updates incompatible with DesertMedTech's API specifications.],
-	[*Group Awareness* #linebreak() Lack of Trust Between Onshore/Offshore Teams],[Perceived disparities in code quality create mistrust between the U.S. and Ukrainian teams.]
+    columns: (1fr, 2fr),
+    align: (left, left),
+    inset: 5pt,
+    fill: (_, y) => if calc.odd(y) { rgb("EAF2F5") },
+    stroke: rgb("21222C"),
+    table.header([*Risk Category*],[*Identified Risk*]),
+
+    [*Requirement Elicitation* #linebreak() Unclear Requirements in Multiple Development Sites],
+    [Miscommunication about "real-time data synchronization" due to geographic separation and differing Agile practices.],
+
+    [*Objective Statement* #linebreak() Ambiguity in Objective Meaning Due to Cultural Differences],
+    ["Data security" priorities vary—DesertMedTech focuses on HIPAA compliance, while CodeCrafters Ukraine emphasizes GDPR standards.],
+
+    [*Design* #linebreak() Design Inconsistency],
+    [DesertMedTech's high-computation cloud systems conflict with CodeCrafters Ukraine's lightweight firmware requirements for wearables.],
+
+    [*Coding* #linebreak() Lack of Coordination],
+    [Time zone differences cause delays in code reviews, complicating integration during paired programming sessions.],
+
+    [*Testing* #linebreak() Unavailability of Real Testing Data],
+    [Privacy regulations restrict access to patient datasets for cross-border testing, making quality assurance more difficult.],
+
+    [*Release and Deployment* #linebreak() Difference in Agile Practices at Sites],
+    [DesertMedTech uses Jira for sprint tracking, while CodeCrafters Ukraine relies on Trello, leading to workflow misalignment.],
+
+    [*Project Management* #linebreak() Exceeded Project Time],
+    [Onboarding delays occur due to CodeCrafters Ukraine's unfamiliarity with FDA compliance requirements.],
+
+    [*Communication* #linebreak() Misinterpretation of Message],
+    [Ambiguous Slack messages about "critical bug fixes" result in conflicting priorities between teams.],
+
+    [*Technology-Based Issues* #linebreak() Improper Utilization of Tools],
+    [Insufficient training on shared CI/CD tools leads to frequent build failures.],
+
+    [*External Stakeholder Dependency* #linebreak() Dependency on Third-Party],
+    [A subcontractor hired by CodeCrafters Ukraine delivers firmware updates incompatible with DesertMedTech's API specifications.],
+
+    [*Group Awareness* #linebreak() Lack of Trust Between Onshore/Offshore Teams],
+    [Perceived disparities in code quality create mistrust between U.S.-based and Ukrainian teams.]
 )
 
 = Part 2: Mitigation Strategies
 
-
-
 #table(
-	columns: (auto,auto),
-	align: (left,left),
-	inset: 5pt,
-	fill: (_, y) => if calc.odd(y) { rgb("EAF2F5") },
-	stroke: rgb("21222C"),
-	table.header([*Risk Category*],[*Mitigation Strategy*]),
-	[Requirement Elicitation],[Organize biweekly virtual workshops using collaborative tools like Miro for requirement mapping.],
-	[Objective Statement],[Develop a shared glossary of terms approved by both teams to ensure clarity in objectives.],
-	[Design],[Use centralized design documentation tools like Confluence to synchronize design changes across teams.],
-	[Coding],[Schedule overlapping work hours (e.g., 6–8 AM MST / 4–6 PM UTC+2) for real-time collaboration on code reviews.],
-	[Testing],[Implement synthetic data generators compliant with HIPAA and GDPR for testing purposes.],
-	[Release and Deployment],[Standardize project management tools across both teams (e.g., switch both teams to Jira).],
-	[Project Management],[Assign a dedicated liaison familiar with FDA regulations to streamline onboarding processes for CodeCrafters Ukraine.],
-	[Communication],[Replace instant message chains with structured collaboration platforms like Confluence or Microsoft Teams for clear messaging and follow-ups.],
-	[Technology-Based],[Provide comprehensive training sessions on CI/CD tools for both teams before project initiation.],
-	[External Stakeholder],[Enforce API contracts using Swagger documentation and automated compatibility checks during development cycles.],
-	[Group Awareness],[Conduct monthly virtual team-building activities to foster trust and understanding between teams.],
-)
+    columns: (1fr, 2fr),
+    align: (left, left),
+    inset: 5pt,
+    fill: (_, y) => if calc.odd(y) { rgb("EAF2F5") },
+    stroke: rgb("21222C"),
+    table.header([*Risk Category*],[*Mitigation Strategy*]),
 
+    [*Requirement Elicitation* #linebreak() Unclear Requirements in Multiple Development Sites],
+    [Hold biweekly virtual workshops using tools like Miro for collaborative requirement mapping.],
+
+    [*Objective Statement* #linebreak() Ambiguity in Objective Meaning Due to Cultural Differences],
+    [Create a shared glossary of terms reviewed and approved by both teams to ensure clarity in objectives.],
+
+    [*Design* #linebreak() Design Inconsistency],
+    [Adopt centralized design documentation tools like Confluence to keep design changes synchronized across teams.],
+
+    [*Coding* #linebreak() Lack of Coordination],
+    [Schedule overlapping work hours (e.g., 6–8 AM MST / 4–6 PM UTC+2) for real-time collaboration during code reviews.],
+
+    [*Testing* #linebreak() Unavailability of Real Testing Data],
+    [Use synthetic data generators that comply with both HIPAA and GDPR for testing purposes.],
+
+    [*Release and Deployment* #linebreak() Difference in Agile Practices at Sites],
+    [Standardize project management tools across teams (e.g., switch both teams to Jira).],
+
+    [*Project Management* #linebreak() Exceeded Project Time],
+    [Assign a liaison familiar with FDA regulations to streamline onboarding processes for CodeCrafters Ukraine.],
+
+    [*Communication* #linebreak() Misinterpretation of Message],
+    [Replace informal Slack threads with structured platforms like Confluence or Microsoft Teams for clearer messaging and follow-ups.],
+
+    [*Technology-Based Issues* #linebreak() Improper Utilization of Tools],
+    [Provide comprehensive training on CI/CD tools for both teams before starting the project.],
+
+    [*External Stakeholder Dependency* #linebreak() Dependency on Third-Party],
+    [Enforce API contracts using Swagger documentation and automated compatibility checks during development cycles.],
+
+    [*Group Awareness* #linebreak() Lack of Trust Between Onshore/Offshore Teams],
+    [Host monthly virtual team-building activities to foster trust and strengthen relationships between teams.]
+)
 
 #bibliography(
 	"bib.bib",
