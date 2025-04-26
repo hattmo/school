@@ -1,0 +1,73 @@
+                      Report Banner - Edit rsm.cfg File
+
+           Resource Standard Metrics (TM) for C, C++, C# and Java
+                   Version 7.75 - mSquaredTechnologies.com
+
+  License Type: Shareware Evaluation License
+  Licensed To : Shareware End User - Distribute Freely
+  License No. : SW1380                          License Date: Dec 05, 1998
+  Build Date  : Sep  2 2009                         Run Date: Apr 25, 2025
+  (C)1996-2009 M Squared Technologies LLC
+  ________________________________________________________________________
+
+  License File: /home/matthew/.local/bin/rsm.lic
+  Config. File: /home/matthew/.local/bin/rsm.cfg
+  Command Line: -Oreport.txt -fa -c -o -Es -Ec ../../../projects/liquid/sr
+                c/main/java/com/hattmo/liquid/networking/ParserHTTP.java 
+                           ~~ Function Metrics ~~
+                         ~~ Class/Struct Metrics ~~
+                          ~~ Complexity Analysis ~~
+                    ~~ Literal String Extraction Mode ~~
+                        ~~ Comment Extraction Mode ~~
+
+  File: ../../../projects/liquid/src/main/java/com/hattmo/liquid/networkin
+        g/ParserHTTP.java
+  ________________________________________________________________________
+
+  Package Begin: com.hattmo.liquid.networking
+
+      17: author Hattmo
+  Function: com.hattmo.liquid.networking.ParserHTTP.setInputStream
+  Parameters: (InputStream is)
+  Complexity   Param 1       Return 1      Cyclo Vg 1       Total        3
+  LOC 3        eLOC 2        lLOC 1        Comment 0        Lines        3
+
+  Function: com.hattmo.liquid.networking.ParserHTTP.setOutputStream
+  Parameters: (OutputStream os)
+  Complexity   Param 1       Return 1      Cyclo Vg 1       Total        3
+  LOC 3        eLOC 2        lLOC 1        Comment 0        Lines        3
+
+  Function: com.hattmo.liquid.networking.ParserHTTP.sendMessage
+  Parameters: (Message m)
+  Complexity   Param 1       Return 1      Cyclo Vg 2       Total        4
+  LOC 9        eLOC 7        lLOC 4        Comment 0        Lines       10
+
+      52: HTTP/1.1
+      52: HTTP/1.0
+      69: content-length
+      85: transfer-encoding
+      86: chunked
+  Function: com.hattmo.liquid.networking.ParserHTTP.recieveMessage
+  Parameters: (MessageDispatcher messageDispach)
+  Complexity   Param 1       Return 1      Cyclo Vg 18      Total       20
+  LOC 62       eLOC 46       lLOC 31       Comment 0        Lines       63
+
+  Class: com.hattmo.liquid.networking.ParserHTTP
+  Attributes   Publ 0        Prot 0        Private 2        Total        2
+  Methods      Publ 4        Prot 0        Private 0        Total        4
+  LOC 81       eLOC 60       lLOC 39       Comment 3        Lines       87
+
+  Package End: com.hattmo.liquid.networking
+
+  ________________________________________________________________________
+  End of File: ../../../projects/liquid/src/main/java/com/hattmo/liquid/ne
+               tworking/ParserHTTP.java
+
+
+
+          Shareware evaluation licenses process only 20 files.
+          Paid licenses enable processing for an unlimited number of files.
+
+  ________________________________________________________________________
+
+                      Report Banner - Edit rsm.cfg File

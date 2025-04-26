@@ -1,0 +1,11 @@
+portability:
+  type: Book
+  title: Measuring the Portability of Executable Service-Oriented Processes
+  author:
+    - Jorg Lenhard
+    - Guido Wirtz
+  publisher: Distributed Systems Group
+  organization: University of Bamberg
+  location: Bamberg, Germany
+  page-total: 10
+
