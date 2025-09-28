@@ -160,13 +160,7 @@
 \maketitle
 
 \begin{abstract}
-  UPDATED---\today. This sample BAR describes the formatting
-  requirements for SIGCHI conference proceedings, and offers
-  recommendations on writing for the worldwide SIGCHI
-  readership. Please review this document even if you have submitted
-  to SIGCHI conferences before, as some format details have changed
-  relative to previous years. Abstracts should be about 150 words and
-  are required.
+	This is the abstract
 \end{abstract}
 
 \category{H.5.m.}{Information Interfaces and Presentation
@@ -178,398 +172,204 @@
 
 \section{Introduction}
 
-This format is to be used for submissions that are published in the
-conference proceedings. We wish to give this volume a consistent,
-high-quality appearance. We therefore ask that authors follow some
-simple guidelines. You should format your paper exactly like this
-document. The easiest way to do this is to replace the content with
-your own material.  This document describes how to prepare your
-submissions using \LaTeX.
+\section{Novelty}
 
-\section{Page Size and Columns}
-On each page your material should fit within a rectangle of 7 $\times$
-9.15 inches (18 $\times$ 23.2 cm), centered on a US Letter page (8.5
-$\times$ 11 inches), beginning 0.85 inches (1.9 cm) from the top of
-the page, with a 0.3 inches (0.85 cm) space between two 3.35 inches
-(8.4 cm) columns. Right margins should be justified, not
-ragged. Please be sure your document and PDF are US letter and not A4.
+Although smart agriculture and TinyML are increasingly established in commercial farming, their direct application to backyard and home-garden scales is underexplored. This paper asks whether proven smart-agriculture principles and recent edge-AI advances can make home gardening both tractable and studyable at scale, within practical constraints of \emph{time, cost, and limited owner monitoring}.
 
-\section{Typeset Text}
-The styles contained in this document have been modified from the
-default styles to reflect ACM formatting conventions. For example,
-content paragraphs like this one are formatted using the Normal style.
+The novelty of this work is to demonstrate that smart IoT-enabled precision agriculture (PA) can be \emph{approachable and feasible at the home scale}. Unlike industrial systems that require costly infrastructure, the proposed framework leverages \emph{low-cost IoT sensors and lightweight edge-ML algorithms} to deliver real-time monitoring and decision-making. This enables homeowners to automate and optimize soil health, feeding, composting, harvest timing, and environmental control with minimal intervention.
 
-\LaTeX\ sometimes will create overfull lines that extend into columns.
-To attempt to combat this, the \texttt{.cls} file has a command,
-\texttt{{\textbackslash}sloppy}, that essentially asks \LaTeX\ to
-prefer underfull lines with extra whitespace.  For more details on
-this, and info on how to control it more finely, check out
-{\url{http://www.economics.utoronto.ca/osborne/latex/PMAKEUP.HTM}}.
-
-\subsection{Title and Authors}
-
-Your paper's title, authors and affiliations should run across the
-full width of the page in a single column 17.8 cm (7 in.) wide.  The
-title should be in Helvetica or Arial 18-point bold.  Authors' names
-should be in Times New Roman or Times Roman 12-point bold, and
-affiliations in 12-point regular.  
-
-See \texttt{{\textbackslash}author} section of this template for
-instructions on how to format the authors. For more than three
-authors, you may have to place some address information in a footnote,
-or in a named section at the end of your paper. Names may optionally
-be placed in a single centered row instead of at the top of each
-column. Leave one 10-point line of white space below the last line of
-affiliations.
-
-\subsection{Abstract and Keywords}
-
-Every submission should begin with an abstract of about 150 words,
-followed by a set of Author Keywords and ACM Classification
-Keywords. The abstract and keywords should be placed in the left
-column of the first page under the left half of the title. The
-abstract should be a concise statement of the problem, approach, and
-conclusions of the work described. It should clearly state the paper's
-contribution to the field of HCI\@.
-
-\subsection{Normal or Body Text}
-
-Please use a 10-point Times New Roman or Times Roman font or, if this
-is unavailable, another proportional font with serifs, as close as
-possible in appearance to Times Roman 10-point. Other than Helvetica
-or Arial headings, please use sans-serif or non-proportional fonts
-only for special purposes, such as source code text.
-
-\subsection{First Page Copyright Notice}
-This template include a sample ACM copyright notice at the bottom of
-page 1, column 1.  Upon acceptance, you will be provided with the
-appropriate copyright statement and unique DOI string for publication.
-Accepted papers will be distributed in the conference
-publications. They will also be placed in the ACM Digital Library,
-where they will remain accessible to thousands of researchers and
-practitioners worldwide. See
-\url{http://acm.org/publications/policies/copyright_policy} for the
-ACM's copyright and permissions policy.
-
-\subsection{Subsequent Pages}
-
-On pages beyond the first, start at the top of the page and continue
-in double-column format.  The two columns on the last page should be
-of equal length.
-
-\begin{figure}
-\centering
-  \includegraphics[width=0.9\columnwidth]{figures/sigchi-logo}
-  \caption{Insert a caption below each figure. Do not alter the
-    Caption style.  One-line captions should be centered; multi-line
-    should be justified. }~\label{fig:figure1}
-\end{figure}
-
-\subsection{References and Citations}
-
-Use a numbered list of references at the end of the article, ordered
-alphabetically by last name of first author, and referenced by numbers
-in
-brackets~\cite{acm_categories,ethics,Klemmer:2002:WSC:503376.503378}.
-Your references should be published materials accessible to the
-public. Internal technical reports may be cited only if they are
-easily accessible (i.e., you provide the address for obtaining the
-report within your citation) and may be obtained by any reader for a
-nominal fee. Proprietary information may not be cited. Private
-communications should be acknowledged in the main text, not referenced
-(e.g., ``[Borriello, personal communication]'').
-
-References should be in ACM citation format:
-\url{http://acm.org/publications/submissions/latex_style}. This
-includes citations to internet
-resources~\cite{acm_categories,cavender:writing,CHINOSAUR:venue,psy:gangnam}
-according to ACM format, although it is often appropriate to include
-URLs directly in the text, as above.
-
-
-% Use a numbered list of references at the end of the article, ordered
-% alphabetically by first author, and referenced by numbers in
-% brackets~\cite{ethics, Klemmer:2002:WSC:503376.503378,
-%   Mather:2000:MUT, Zellweger:2001:FAO:504216.504224}. For papers from
-% conference proceedings, include the title of the paper and an
-% abbreviated name of the conference (e.g., for Interact 2003
-% proceedings, use \textit{Proc. Interact 2003}). Do not include the
-% location of the conference or the exact date; do include the page
-% numbers if available. See the examples of citations at the end of this
-% document. Within this template file, use the \texttt{References} style
-% for the text of your citation.
-
-% Your references should be published materials accessible to the
-% public.  Internal technical reports may be cited only if they are
-% easily accessible (i.e., you provide the address for obtaining the
-% report within your citation) and may be obtained by any reader for a
-% nominal fee.  Proprietary information may not be cited. Private
-% communications should be acknowledged in the main text, not referenced
-% (e.g., ``[Robertson, personal communication]'').
-
-\begin{table}
-  \centering
-  \begin{tabular}{l r r r}
-    % \toprule
-    & & \multicolumn{2}{c}{\small{\textbf{Test Conditions}}} \\
-    \cmidrule(r){3-4}
-    {\small\textit{Name}}
-    & {\small \textit{First}}
-      & {\small \textit{Second}}
-    & {\small \textit{Final}} \\
-    \midrule
-    Marsden & 223.0 & 44 & 432,321 \\
-    Nass & 22.2 & 16 & 234,333 \\
-    Borriello & 22.9 & 11 & 93,123 \\
-    Karat & 34.9 & 2200 & 103,322 \\
-    % \bottomrule
-  \end{tabular}
-  \caption{Table captions should be placed below the table. We
-    recommend table lines be 1 point, 25\% black. Minimize use of
-    table grid lines.}~\label{tab:table1}
-\end{table}
-
-\section{Sections}
-
-The heading of a section should be in Helvetica or Arial 9-point bold,
-all in capitals. Sections should \textit{not} be numbered.
-
-\subsection{Subsections}
-
-Headings of subsections should be in Helvetica or Arial 9-point bold
-with initial letters capitalized.  For sub-sections and
-sub-subsections, a word like \emph{the} or \emph{of} is not
-capitalized unless it is the first word of the heading.
-
-\subsubsection{Sub-subsections}
-
-Headings for sub-subsections should be in Helvetica or Arial 9-point
-italic with initial letters capitalized.  Standard
-\texttt{{\textbackslash}section}, \texttt{{\textbackslash}subsection},
-and \texttt{{\textbackslash}subsubsection} commands will work fine in
-this template.
-
-\section{Figures/Captions}
-
-Place figures and tables at the top or bottom of the appropriate
-column or columns, on the same page as the relevant text (see
-Figure~\ref{fig:figure1}). A figure or table may extend across both
-columns to a maximum width of 17.78 cm (7 in.).
-
-\begin{figure*}
-  \centering
-  \includegraphics[width=1.75\columnwidth]{figures/map}
-  \caption{In this image, the map maximizes use of space. You can make
-    figures as wide as you need, up to a maximum of the full width of
-    both columns. Note that \LaTeX\ tends to render large figures on a
-    dedicated page. Image: \ccbynd~ayman on
-    Flickr.}~\label{fig:figure2}
-\end{figure*}
-
-Captions should be Times New Roman or Times Roman 9-point bold.  They
-should be numbered (e.g., ``Table~\ref{tab:table1}'' or
-``Figure~\ref{fig:figure1}''), centered and placed beneath the figure
-or table.  Please note that the words ``Figure'' and ``Table'' should
-be spelled out (e.g., ``Figure'' rather than ``Fig.'') wherever they
-occur. Figures, like Figure~\ref{fig:figure2}, may span columns and
-all figures should also include alt text for improved accessibility.
-Papers and notes may use color figures, which are included in the page
-limit; the figures must be usable when printed in black-and-white in
-the proceedings.
-
-The paper may be accompanied by a short video figure up to five
-minutes in length. However, the paper should stand on its own without
-the video figure, as the video may not be available to everyone who
-reads the paper.  
-
-\subsection{Inserting Images}
-When possible, include a vector formatted graphic (i.e. PDF or EPS).
-When including bitmaps,  use an image editing tool to resize the image
-at the appropriate printing resolution (usually 300 dpi).
-
-\section{Quotations}
-Quotations may be italicized when \textit{``placed inline''} (Anab,
-23F).
-
-\begin{quote}
-Longer quotes, when placed in their own paragraph, need not be
-italicized or in quotation marks when indented (Ramon, 39M).  
-\end{quote}
-
-\section{Language, Style, and Content}
-
-The written and spoken language of SIGCHI is English. Spelling and
-punctuation may use any dialect of English (e.g., British, Canadian,
-US, etc.) provided this is done consis- tently. Hyphenation is
-optional. To ensure suitability for an international audience, please
-pay attention to the following:
-
+Where existing agricultural research has largely focused on scaling up efficiency for large farms, this study identifies the \emph{reverse challenge}: scaling down these technologies to make them usable and cost-effective for non-expert users. The approach highlights:
 \begin{itemize}
-\item Write in a straightforward style.
-\item Try to avoid long or complex sentence structures.
-\item Briefly define or explain all technical terms that may be
-  unfamiliar to readers.
-\item Explain all acronyms the first time they are used in your
-  text---e.g., ``Digital Signal Processing (DSP)''.
-\item Explain local references (e.g., not everyone knows all city
-  names in a particular country).
-\item Explain ``insider'' comments. Ensure that your whole audience
-  understands any reference whose meaning you do not describe (e.g.,
-  do not assume that everyone has used a Macintosh or a particular
-  application).
-\item Explain colloquial language and puns. Understanding phrases like
-  ``red herring'' may require a local knowledge of English.  Humor and
-  irony are difficult to translate.
-\item Use unambiguous forms for culturally localized concepts, such as
-  times, dates, currencies, and numbers (e.g., ``1--5--97'' or
-  ``5/1/97'' may mean 5 January or 1 May, and ``seven o'clock'' may
-  mean 7:00 am or 19:00). For currencies, indicate equivalences:
-  ``Participants were paid {\fontfamily{txr}\selectfont \textwon}
-  25,000, or roughly US \$22.''
-\item Be careful with the use of gender-specific pronouns (he, she)
-  and other gendered words (chairman, manpower, man-months). Use
-  inclusive language that is gender-neutral (e.g., she or he, they,
-  s/he, chair, staff, staff-hours, person-years). See the
-  \textit{Guidelines for Bias-Free Writing} for further advice and
-  examples regarding gender and other personal
-  attributes~\cite{Schwartz:1995:GBF}. Be particularly aware of
-  considerations around writing about people with disabilities.
-\item If possible, use the full (extended) alphabetic character set
-  for names of persons, institutions, and places (e.g.,
-  Gr{\o}nb{\ae}k, Lafreni\'ere, S\'anchez, Nguy{\~{\^{e}}}n,
-  Universit{\"a}t, Wei{\ss}enbach, Z{\"u}llighoven, \r{A}rhus, etc.).
-  These characters are already included in most versions and variants
-  of Times, Helvetica, and Arial fonts.
+\item Automation and optimal decisions: AI systems not only collect data but act on it in real-time, e.g., triggering irrigation or recommending soil amendments before problems escalate.
+\item Feasibility and accessibility: By selecting sensors and protocols (e.g., Zigbee, low-cost pH or NIR probes) that are inexpensive (<\$20 per node) and compatible with microcontrollers, the system can be deployed without specialist expertise.
+\item Affordability and sustainability: Continuous monitoring minimizes waste of inputs (water, fertilizer, energy), while supporting practices such as no-till gardening, organic soil amendments, and climate-friendly cultivation.
+\end{itemize}
+The contribution is twofold: (1) it provides a blueprint for **adapting precision agriculture into a home-garden context** that is both practical and affordable, and (2) it proposes actionable, measurable workflows and metrics for deployment and evaluation.
+
+In this way, the paper advances the argument that precision agriculture is no longer limited to industrial farms: PA is becoming a reality for the home gardener, enabled by the integration of IoT, edge-ML, and AI into a simple, low-cost, and scalable framework.
+
+
+\subsection{Data Collection and Monitoring}
+
+Real-time monitoring allows real-time responses, or at least continual monitoring and collection so that the best decision (via ML + AI + human thinking) can be made at the appropriate time. The idea is that accurate continuous monitoring allows the 5th ag revolution philosophy to minimize costs by staying sensitive to changing environmental conditions, optimizing to using only what's needed when needed, a movement away from resource-heavy practices, away from waste that shows up negatively on the environment.
+
+\subsection{Sensors}
+
+Traditional soil assessment is **slow and reactive** — it depends on lab-based, periodic sampling. Home gardeners rarely have easy lab access, so problems are often noticed too late.
+**Novelty:** With IoT-based sensors, monitoring becomes continuous and real-time. This solves the “not proactive” problem: instead of waiting for delayed results, sensors stream data continuously, giving early warnings and opportunities to act.
+
+Recent work (Upreti et al., 2024; Mansoor et al., 2025) shows that low-cost microcontrollers and wireless networks such as Zigbee make this feasible at small scale. Unlike cloud-heavy deployments in industrial agriculture, edge gateways can aggregate data and run lightweight ML locally, cutting cost and reducing latency. For home farmers, this makes proactive soil care achievable with **inexpensive “dumb” sensors** linked together.
+
+\subsection{Moisture}
+Capacitive soil dielectric sensors are low-cost, wireless, and low-power. They can be deployed at multiple depths to monitor real-time irrigation needs.
+\begin{itemize}
+	\item Novelty: Instead of manual watering schedules, continuous moisture sensing supports automated irrigation and reduces waste.
+	\item Example: <\$10 capacitive probes linked to an ESP32/Zigbee node trigger a small water pump only when soil falls below a set threshold.
 \end{itemize}
 
-\section{Accessibility}
-The Executive Council of SIGCHI has committed to making SIGCHI
-conferences more inclusive for researchers, practitioners, and
-educators with disabilities. As a part of this goal, the all authors
-are asked to work on improving the accessibility of their
-submissions. Specifically, we encourage authors to carry out the
-following five steps:
-\begin{enumerate}
-\item Add alternative text to all figures
-\item Mark table headings
-\item Add tags to the PDF
-\item Verify the default language
-\item Set the tab order to ``Use Document Structure''
-\end{enumerate}
-For more information and links to instructions and resources, please
-see: \url{http://chi2016.acm.org/accessibility}.  The
-\texttt{{\textbackslash}hyperref} package allows you to create well tagged PDF files,
-please see the preamble of this template for an example.
+\subsection{pH}
+Soil pH is a critical factor for nutrient absorption. Real-time pH sensors mitigate soil acidification by optimizing nitrogen use and enabling immediate adjustments.
+\begin{itemize}
+	\item Novelty: Shifts from after-the-fact lab tests to proactive corrections. Supports sustainable practices like no-till farming by maintaining balanced conditions.
+	\item Example: Simple electrochemical pH probes in raised beds can alert a gardener when soil drifts too acidic, prompting lime addition.
+\end{itemize}
 
-\section{Page Numbering, Headers and Footers}
-Your final submission should not contain footer or header information
-at the top or bottom of each page. Specifically, your final submission
-should not include page numbers. Initial submissions may include page
-numbers, but these must be removed for camera-ready. Page numbers will
-be added to the PDF when the proceedings are assembled.
+\subsection{Nutrient Sensors}
+Nutrient sensors measure nitrogen, phosphorus, and potassium (NPK). High-cost optical systems exist, but emerging low-cost NIR sensors are showing promise.
+\begin{itemize}
+	\item Novelty: Brings precision fertilization, once reserved for industrial farms, into a garden setting.  
+	\item Example: NIR-based handheld devices (currently ~\$100) can be shared among community gardens to recommend compost vs. fertilizer inputs.
+\end{itemize}
 
-\section{Producing and Testing PDF Files}
+\subsection{Soil Pollutant Sensors}
+Pollutant sensors detect excess salts, pesticides, or metals that degrade soil health. Compact EC (electrical conductivity) sensors are the most practical option at small scale.
+\begin{itemize}
+	\item Novelty: Home gardeners can detect fertilizer buildup that stresses plants — something usually only studied at industrial scale.
+	\item Example: <\$15 EC probes identify salt accumulation from repeated synthetic fertilizer use, prompting a soil flush with clean water.
+\end{itemize}
 
-We recommend that you produce a PDF version of your submission well
-before the final deadline.  Your PDF file must be ACM DL
-Compliant. The requirements for an ACM Compliant PDF are available at:
-{\url{http://www.sheridanprinting.com/typedept/ACM-distilling-settings.htm}}.
+\subsection{Plant Stress Sensors}
+Plant stress sensors track responses to drought, pests, or heat stress. Most advanced systems (hyperspectral imaging, eco-acoustics) remain experimental, but simple proxies like leaf temperature and chlorophyll fluorescence are becoming feasible.  
+\begin{itemize}
+	\item Novelty: Detects stress *before visible symptoms*, enabling preventive action at home scale.  
+	\item Example: Off-the-shelf thermistors (DS18B20, <\$5) embedded in soil or leaf clips give early warnings of heat stress; SHT31/SHT4x sensors combine air temperature and humidity for <\$10.
+\end{itemize}
 
-Test your PDF file by viewing or printing it with the same software we
-will use when we receive it, Adobe Acrobat Reader Version 10. This is
-widely available at no cost. Note that most
-reviewers will use a North American/European version of Acrobat
-reader, so please check your PDF accordingly.
+\section{Zigbee}
 
-When creating your PDF from Word, ensure that you generate a tagged
-PDF from improved accessibility. This can be done by using the Adobe
-PDF add-in, also called PDFMaker. Select Acrobat | Preferences from
-the ribbon and ensure that ``Enable Accessibility and Reflow with
-tagged Adobe PDF'' is selected. You can then generate a tagged PDF by
-selecting ``Create PDF'' from the Acrobat ribbon.
+Zigbee enables \emph{low-power, short-range radio communication} between IoT nodes, including those embedded directly in plant beds or small livestock enclosures. Unlike wide-area networks such as LoRaWAN or mobile IP systems, Zigbee avoids the overhead of cell towers, roaming protocols, and subscription costs. A Zigbee network can survive and run entirely self-contained.
+
+Novelty: While most precision agriculture research focuses on long-range communication for large farms, Zigbee offers a more suitable option for \emph{1–10 acre home gardens} where distances rarely exceed 100 meters. Its mesh capability extends coverage by allowing each node to forward messages, ensuring reliability even in complex layouts like orchards or coops.
+
+\
+- **Lower Cost:** Zigbee modules are <\$10 and require no carrier subscription, making them accessible for hobbyists and small-scale growers.  
+- **Lower Power:** Nodes can sleep and wake on schedule, reducing duty cycles and enabling battery or solar operation.  
+- **Flexibility:** Supports hundreds of devices, so soil sensors, feeders, and environmental monitors can all share the same network.  
+
+**How we’ll use it:**
+- Soil sensors (moisture, pH, temperature) communicate readings to a Zigbee gateway indoors, which runs edge ML models.  
+- Actuators (pumps, relays, fans) can be triggered through Zigbee messages without needing Wi-Fi or cloud links.  
+- Mesh topology allows adding new garden zones (beds, compost piles, chicken coops) incrementally without rewiring.  
+
+**Novel contribution for home scale:** Zigbee allows us to implement a **low-cost, resilient, and subscription-free precision agriculture network**. It reduces the dependence on cloud or mobile networks, while still enabling enough reliability and range for typical household plots. This makes continuous monitoring and actuation feasible without scaling up to expensive long-range solutions.
+
+\section{Integration of IoT + ML + AI: Decision Making}
+
+All of these sensors share one novel theme: **they generate real-time data streams**. This enables not only monitoring, but also real-time adjustments to inputs or predictions of the best time to take action.
+
+Traditional systems detect problems only after they occur; in contrast, IoT sensors combined with lightweight ML models provide **continuous data streams**, and AI layers translate these into **timely, actionable decisions**. This approach directly addresses the challenge of being “not proactive” in small-scale farming, where delayed responses often mean yield losses or resource waste.
+
+IoT makes this possible by transmitting sensor data via **short-range, low-power protocols** like Zigbee. This removes dependence on cloud or mobile networks, lowering cost and improving responsiveness.
+
+\subsection{ML — Feature Extraction}
+
+Machine Learning reduces raw sensor streams to **interpretable features** that summarize system states:
+- **Soil:** pH drift, nutrient (EC) trends, root-zone temperature, moisture gradients.
+- **Plant:** canopy light fraction, leaf wetness, heat-stress degree hours.
+- **Livestock:** feeder weight change rate, intake frequency, day/night ratio.
+
+*Novelty:* These features are generated **locally and in real time**, enabling decisions to be made before conditions deteriorate.
+
+### ML — Classification
+Low-cost classifiers such as **Support Vector Machines (SVM)** or **Random Forests** categorize soil and crop conditions:
+- **Soil health classification:** *Poor / Average / Good*.
+- **Crop/bed status:** *Dry / Adequate / Wet*, with stress/no-stress indicators.
+- **Livestock behavior:** *Normal / Low intake / Irregular pattern*.
+
+*Novelty:* Lightweight ML (e.g., SVM >94\% accuracy in soil health classification) can run on edge gateways (Raspberry Pi/ESP32), eliminating the need for cloud infrastructure.
+
+### ML — Prediction
+Forecasting models anticipate when thresholds will be crossed:
+- **Moisture drying time:** predict hours to irrigation need.
+- **Nutrient degradation:** estimate days to amendment requirement.
+- **Temperature/ventilation:** forecast heat stress in coops/greenhouses.
+
+*Novelty:* Instead of reacting to thresholds, the system acts **proactively**, scheduling irrigation or amendments at the optimal time to minimize stress and maximize yield.
+
+### ML — Anomaly Detection
+Unsupervised ML detects unusual patterns:
+- **Soil leak detection:** moisture spikes without valve activity.
+- **Nutrient anomalies:** EC surges not explained by fertilization.
+- **Animal anomalies:** abrupt intake drop relative to baseline.
+
+*Novelty:* Early anomaly alerts enable rapid correction before waste or harm occurs.
+
+### AI — Decision Layer
+The AI layer translates ML outputs into **direct recommendations or actions**:
+- **Irrigation policy:** actuate pumps when forecasts predict drying within 12–18 h.
+- **Soil restoration planner:** recommend compost/cover crops when soil class degrades.
+- **Crop rotation advisor:** suggest legume rotation when soil fatigue is detected.
+- **Livestock scheduler:** adjust feeding cycles from predicted intake.
+
+*Novelty:* AI integrates multiple ML outputs into **optimal, context-aware decisions**—balancing short-term resource use with long-term soil restoration.
+
+### Why This Is Novel
+1. **Real-time:** Traditional soil management is slow and reactive; this system produces continuous, actionable data.  
+2. **Proactive:** Forecasts anticipate problems, allowing **optimal timing** of irrigation and soil amendments.  
+3. **Feasible at home scale:** Uses **low-cost Zigbee sensors** + **lightweight ML models** deployable on small gateways.  
+4. **Actionable AI layer:** Goes beyond classification to deliver **direct interventions or clear recommendations** for farmers.  
+
+*In research context:* This integration of IoT, ML, and AI demonstrates a pathway toward **real-time, resource-efficient farming** that is both **scalable** for large agriculture and **feasible** for small home gardens.
+
+## AI — Decision Layer
+
+While ML provides classification and prediction, the **AI layer** operationalizes these insights into coordinated decision-making.  
+Hoque & Padhiyar (2024) stress that IoT–AI systems enable not only monitoring but also **closed-loop actuation**: irrigation valves can be triggered automatically, greenhouse fans activated, and nutrient delivery adjusted without human intervention. This elevates monitoring to **real-time regulation**, ensuring that optimal soil and plant conditions are actively maintained.
+
+### Examples for Home-Scale Use
+- **Irrigation scheduling:** Instead of fixed watering schedules, AI agents use soil moisture and temperature data to trigger watering only when stress is imminent. Upreti et al. (2024) demonstrated that IoT+ML models predict drying rates with high accuracy, making it feasible to irrigate *only when needed*. For a home gardener, this may simply be a Zigbee-enabled moisture probe connected to a pump that waters potted plants once soil drops below a set threshold.
+- **Nutrient management:** Sishodia et al. (2020) show that nutrient sensors and predictive models can optimize fertilizer timing, reducing runoff and cost. At home scale, AI rules can recommend adding compost or diluted organic fertilizer when real-time nutrient levels decline, extending soil life and supporting no-till practices.
+- **Greenhouse/climate control:** AI can actuate small fans, vents, or humidity sensors to stabilize conditions in a hobby greenhouse. This mimics industrial systems, but scaled down to <\$20 IoT nodes that act when temperature exceeds crop thresholds.
+- **Soil restoration planning:** Building on degradation predictions, AI systems can issue “traffic light” recommendations — e.g., *Poor soil: add compost this week*, *Average: rotate with beans next season*. This makes actionable soil restoration feasible for non-experts.
+
+## AI + ML Synergy
+
+Hoque & Padhiyar (2024) argue that the true impact lies in combining ML’s **prediction** with AI’s **decision orchestration**:  
+- ML handles **feature extraction** (e.g., spectral indices, soil nutrient depletion curves) and **prediction** (e.g., drying rates, soil fertility loss).  
+- AI integrates these signals into **multi-factor decisions**, balancing water use, fertilizer efficiency, and restoration goals.  
+
+Upreti et al. (2024) confirmed that real-time IoT+ML soil monitoring enables **continuous adjustment of irrigation and nutrient inputs**, cutting delays inherent in lab-based testing.  
+Sishodia et al. (2020) further highlight how predictive indices (e.g., Leaf Area Index, Plant Available Water) can be integrated into AI pipelines for **optimal irrigation scheduling** — insights that can be adapted from remote sensing to low-cost proximity sensors in home gardens.
+
+## Research Contribution
+
+This layered integration demonstrates novelty in three clear ways:
+
+1. **From real-time to optimal:** Instead of merely alerting gardeners, AI systems act at the *right moment* — preventing stress before it occurs.  
+2. **Closed-loop control:** Linking sensors → ML predictions → AI decisions → actuation creates a **feedback system** previously unavailable to small-scale farmers.  
+3. **Feasibility for home use:** What began as large-scale precision agriculture (Hoque & Padhiyar, 2024; Sishodia et al., 2020) can now be adapted to **low-cost, Zigbee-enabled edge nodes** and simplified outputs (traffic-light indicators, automatic pumps), as Upreti et al. (2024) showed with lightweight ML deployment.  
+
+Together, these studies show that **AI-driven decision-making in soil health is not only feasible but transformative**: reducing waste, conserving inputs, and providing home gardeners with the kind of real-time optimization once limited to industrial-scale farms.
+
+## AI + Smart Applications — From Prediction to Action
+
+Machine Learning (ML) reduces raw sensor data to actionable predictions, while Artificial Intelligence (AI) extends this by orchestrating real-time decisions and actuation.  
+The novelty lies in moving beyond monitoring to **closed-loop control**: sensors detect soil or plant conditions, ML models predict outcomes such as nutrient degradation or soil drying, and AI makes **optimal decisions** to trigger irrigation, nutrient amendments, or climate adjustments at the right time.
+
+### Real-Time Regulation
+Hoque & Padhiyar (2024) emphasize that IoT–AI systems transform monitoring into **continuous regulation**: irrigation valves, greenhouse fans, or fertigation pumps can be activated automatically, reducing human workload while ensuring soil and plant conditions remain within optimal ranges.  
+Upreti et al. (2024) demonstrated that real-time IoT+ML soil monitoring can accurately forecast soil drying, enabling water to be applied **only when needed**, a shift from reactive watering to proactive conservation.
+
+### Home-Scale Applications
+- **Smart Irrigation:** A Zigbee-enabled moisture probe linked to an ESP32 node can trigger a pump when soil moisture falls below a threshold. This adapts industrial “model predictive irrigation” (Bwambaale et al., 2022) to a <$20 home setup, reducing waste and preventing stress.  
+- **Nutrient Management:** Sishodia et al. (2020) showed how predictive indices (e.g., Leaf Area Index, Plant Available Water) guide fertilization. At home scale, AI rules can recommend compost addition or diluted organic fertilizer when nutrient sensors detect decline, preventing over-application and runoff.  
+- **Greenhouse/Environment Control:** AI-driven rules can actuate small fans, vents, or heaters to stabilize hobby greenhouse conditions. For instance, a thermistor probe connected to a Zigbee node can trigger ventilation when temperature exceeds crop-specific thresholds.  
+- **Soil Restoration Guidance:** Instead of lab-intensive soil reports, AI systems can issue “traffic-light” style recommendations (Poor / Average / Good soil), paired with suggestions such as crop rotation, organic amendment, or cover cropping.
+
+### Novelty and Contribution
+This integrated approach demonstrates novelty in three dimensions:  
+1. **From real-time to optimal decisions:** Monitoring no longer ends at data collection; actions are triggered at the *right moment*, preventing stress before it occurs.  
+2. **Closed-loop feedback:** Linking **sensors → ML predictions → AI orchestration → actuation** creates a dynamic feedback system that continually optimizes soil and crop conditions.  
+3. **Feasibility for small-scale use:** What began as large-scale precision agriculture (Hoque & Padhiyar, 2024; Sishodia et al., 2020) can now be adapted with low-cost, Zigbee-enabled nodes, lightweight ML models such as SVM (~94\% accuracy in soil classification, Upreti et al., 2024), and simplified decision outputs usable by home gardeners.
 
 \section{Conclusion}
-
-It is important that you write for the SIGCHI audience. Please read
-previous years' proceedings to understand the writing style and
-conventions that successful authors have used. It is particularly
-important that you state clearly what you have done, not merely what
-you plan to do, and explain how your work is different from previously
-published work, i.e., the unique contribution that your work makes to
-the field. Please consider what the reader will learn from your
-submission, and how they will find your work useful. If you write with
-these questions in mind, your work is more likely to be successful,
-both in being accepted into the conference, and in influencing the
-work of our field.
+AI+ML integration enables **real-time, optimal, and automated soil management**, conserving inputs, reducing waste, and making precision agriculture approaches viable even for the home garden.
 
 \section{Acknowledgments}
-
-Sample text: We thank all the volunteers, and all publications support
-and staff, who wrote and provided helpful comments on previous
-versions of this document. Authors 1, 2, and 3 gratefully acknowledge
-the grant from NSF (\#1234--2012--ABC). \textit{This whole paragraph is
-  just an example.}
-
-% Balancing columns in a ref list is a bit of a pain because you
-% either use a hack like flushend or balance, or manually insert
-% a column break.  http://www.tex.ac.uk/cgi-bin/texfaq2html?label=balance
-% multicols doesn't work because we're already in two-column mode,
-% and flushend isn't awesome, so I choose balance.  See this
-% for more info: http://cs.brown.edu/system/software/latex/doc/balance.pdf
-%
-% Note that in a perfect world balance wants to be in the first
-% column of the last page.
-%
-% If balance doesn't work for you, you can remove that and
-% hard-code a column break into the bbl file right before you
-% submit:
-%
-% http://stackoverflow.com/questions/2149854/how-to-manually-equalize-columns-
-% in-an-ieee-paper-if-using-bibtex
-%
-% Or, just remove \balance and give up on balancing the last page.
-%
 \balance{}
 
 \section{References Format}
-Your references should be published materials accessible to the
-public. Internal technical reports may be cited only if they are
-easily accessible and may be obtained by any reader for a nominal
-fee. Proprietary information may not be cited. Private communications
-should be acknowledged in the main text, not referenced (e.g.,
-[Golovchinsky, personal communication]). References must be the same
-font size as other body text. References should be in alphabetical
-order by last name of first author. Use a numbered list of references
-at the end of the article, ordered alphabetically by last name of
-first author, and referenced by numbers in brackets. For papers from
-conference proceedings, include the title of the paper and the name of
-the conference. Do not include the location of the conference or the
-exact date; do include the page numbers if available. 
-
-References should be in ACM citation format:
-\url{http://www.acm.org/publications/submissions/latex_style}.  This
-includes citations to Internet
-resources~\cite{CHINOSAUR:venue,cavender:writing,psy:gangnam}
-according to ACM format, although it is often appropriate to include
-URLs directly in the text, as above. Example reference formatting for
-individual journal articles~\cite{ethics}, articles in conference
-proceedings~\cite{Klemmer:2002:WSC:503376.503378},
-books~\cite{Schwartz:1995:GBF}, theses~\cite{sutherland:sketchpad},
-book chapters~\cite{winner:politics}, an entire journal
-issue~\cite{kaye:puc},
-websites~\cite{acm_categories,cavender:writing},
-tweets~\cite{CHINOSAUR:venue}, patents~\cite{heilig:sensorama}, 
-games~\cite{supermetroid:snes}, and
-online videos~\cite{psy:gangnam} is given here.  See the examples of
-citations at the end of this document and in the accompanying
-\texttt{BibTeX} document. This formatting is a edited version of the
-format automatically generated by the ACM Digital Library
-(\url{http://dl.acm.org}) as ``ACM Ref.'' DOI and/or URL links are
-optional but encouraged as are full first names. Note that the
-Hyperlink style used throughout this document uses blue links;
-however, URLs in the references section may optionally appear in
-black.
-
+gonline videos~\cite{psy:gangnam} is given here.
 % BALANCE COLUMNS
 \balance{}
 
