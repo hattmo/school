@@ -76,7 +76,7 @@
 % Paper metadata (use plain text, for PDF inclusion and later
 % re-using, if desired).  Use \emtpyauthor when submitting for review
 % so you remain anonymous.
-\def\plaintitle{CSE 535 IDEA PAPER}
+\def\plaintitle{SIGCHI Conference Proceedings Format}
 \def\plainauthor{First Author, Second Author, Third Author,
   Fourth Author, Fifth Author, Sixth Author}
 \def\emptyauthor{}
@@ -134,15 +134,8 @@
 
 \title{\plaintitle}
 
-\numberofauthors{5}
+\numberofauthors{3}
 \author{%
-  \alignauthor{Matthew Howard\\
-    \affaddr{Odenton MD, USA}\\
-    \email{mshowar4@asu.edu}}\\
-  \alignauthor{Leave Authors Anonymous\\
-    \affaddr{for Submission}\\
-    \affaddr{City, Country}\\
-    \email{e-mail address}}\\
   \alignauthor{Leave Authors Anonymous\\
     \affaddr{for Submission}\\
     \affaddr{City, Country}\\
@@ -160,7 +153,7 @@
 \maketitle
 
 \begin{abstract}
-  UPDATED---\today. This sample BAR describes the formatting
+  UPDATED---\today. This sample paper describes the formatting
   requirements for SIGCHI conference proceedings, and offers
   recommendations on writing for the worldwide SIGCHI
   readership. Please review this document even if you have submitted
