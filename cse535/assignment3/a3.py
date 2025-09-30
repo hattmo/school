@@ -16,10 +16,8 @@ class A3:
             self.df['Memory_Usage_MB'] * weights[1] +
             self.df['Network_Activity_KB'] * weights[2] +
             self.df['Disk_IO_MB'] * weights[3]
-        ) * self.df['ExecutionTimes']
-
-        energy = np.round(energy, 2)
-        avg = np.round(np.mean(energy), 2)
+        )
+        avg = np.round(np.mean(energy.astype(np.float64)), 2)
         max = self.df['Application'][np.argmax(energy)]
         min = self.df['Application'][np.argmin(energy)]
         return (avg, max, min)
@@ -28,10 +26,15 @@ class A3:
         if self.df is None:
             raise Exception()
 
-        cpu = np.sum(self.df['CPU_Usage_Percent'] * weights[0] * self.df['ExecutionTimes'])
-        mem = np.sum(self.df['Memory_Usage_MB'] * weights[1] * self.df['ExecutionTimes'])
-        net = np.sum(self.df['Network_Activity_KB'] * weights[2] * self.df['ExecutionTimes'])
-        disk = np.sum(self.df['Disk_IO_MB'] * weights[3] * self.df['ExecutionTimes'])
+        cpu_sum = np.sum(self.df['CPU_Usage_Percent'] * self.df['Execution_Time_s'])
+        mem_sum = np.sum(self.df['Memory_Usage_MB'] * self.df['Execution_Time_s'])
+        net_sum = np.sum(self.df['Network_Activity_KB'] * self.df['Execution_Time_s'])
+        disk_sum = np.sum(self.df['Disk_IO_MB'] * self.df['Execution_Time_s'])
+
+        cpu = weights[0] * cpu_sum
+        mem = weights[1] * mem_sum
+        net = weights[2] * net_sum
+        disk = weights[3] * disk_sum
 
         total = cpu + mem + net + disk
 
@@ -51,7 +54,7 @@ class A3:
             self.df['Memory_Usage_MB'] * weights[1] +
             self.df['Network_Activity_KB'] * weights[2] +
             self.df['Disk_IO_MB'] * weights[3]
-        ) * self.df['ExecutionTimes']
+        ) * self.df['Execution_Time_s']
 
         power = energy / self.df['Exe cutionTimes']
         power = np.round(power, 2)
@@ -78,3 +81,11 @@ class A3:
         ]
         return tuple(sensitivities)
 
+
+def main():
+    a = A3()
+    a.read_dataset()
+    a.generate_energy_statistics([1,2,3,4])
+
+if __name__ == '__main__':
+    main()
