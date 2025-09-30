@@ -26,10 +26,10 @@ class A3:
         if self.df is None:
             raise Exception()
 
-        cpu_sum = np.sum(self.df['CPU_Usage_Percent'] * self.df['Execution_Time_s'])
-        mem_sum = np.sum(self.df['Memory_Usage_MB'] * self.df['Execution_Time_s'])
-        net_sum = np.sum(self.df['Network_Activity_KB'] * self.df['Execution_Time_s'])
-        disk_sum = np.sum(self.df['Disk_IO_MB'] * self.df['Execution_Time_s'])
+        cpu_sum = np.sum(self.df['CPU_Usage_Percent']) 
+        mem_sum = np.sum(self.df['Memory_Usage_MB'])
+        net_sum = np.sum(self.df['Network_Activity_KB'])
+        disk_sum = np.sum(self.df['Disk_IO_MB'])
 
         cpu = weights[0] * cpu_sum
         mem = weights[1] * mem_sum
@@ -39,12 +39,12 @@ class A3:
         total = cpu + mem + net + disk
 
         sensitivities = [
-            np.round(cpu / total * 100, 2),
-            np.round(mem / total * 100, 2),
-            np.round(net / total * 100, 2),
-            np.round(disk / total * 100, 2)
+            round(cpu / total * 100, 2),
+            round(mem / total * 100, 2),
+            round(net / total * 100, 2),
+            round(disk / total * 100, 2)
         ]
-        return tuple(sensitivities)
+        return tuple(np.float64(x) for x in sensitivities)
 
     def generate_power_statistics(self, weights):
         if self.df is None:
@@ -55,13 +55,12 @@ class A3:
             self.df['Network_Activity_KB'] * weights[2] +
             self.df['Disk_IO_MB'] * weights[3]
         ) * self.df['Execution_Time_s']
-
-        power = energy / self.df['Exe cutionTimes']
+        power = energy / self.df['Execution_Time_s']
         power = np.round(power, 2)
         avg = np.round(np.mean(power), 2)
-        max = self.df['Application'][np.argmax(power)]
-        min = self.df['Application'][np.argmin(power)]
-        return (avg, max, min)
+        max_app = self.df['Application'][np.argmax(power)]
+        min_app = self.df['Application'][np.argmin(power)]
+        return (avg, max_app, min_app)
 
     def calculate_power_sensitivites(self, weights):
         if self.df is None:
