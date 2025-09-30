@@ -169,225 +169,77 @@
   classifiers. This section is required.}{}{}
 
 \keywords{\plainkeywords}
-
 \section{Introduction}
 
-\section{Novelty}
+Precision agriculture and TinyML have transformed commercial farming, but their extension to home and backyard gardens remains limited. This paper demonstrates that by leveraging low-cost IoT sensors and edge-ML models, precision agriculture can now be \emph{approachable, practical, and sustainable} for home gardeners within constraints of time, budget, and minimal monitoring. The framework supports automation (real-time irrigation, nutrient management), accessibility (easy deployment for non-experts), and sustainability (waste reduction, resource efficiency), offering a scalable blueprint for home-scale smart agriculture.
 
-Although smart agriculture and TinyML are increasingly established in commercial farming, their direct application to backyard and home-garden scales is underexplored. This paper asks whether proven smart-agriculture principles and recent edge-AI advances can make home gardening both tractable and studyable at scale, within practical constraints of \emph{time, cost, and limited owner monitoring}.
+\section{IoT Sensing and Monitoring}
 
-The novelty of this work is to demonstrate that smart IoT-enabled precision agriculture (PA) can be \emph{approachable and feasible at the home scale}. Unlike industrial systems that require costly infrastructure, the proposed framework leverages \emph{low-cost IoT sensors and lightweight edge-ML algorithms} to deliver real-time monitoring and decision-making. This enables homeowners to automate and optimize soil health, feeding, composting, harvest timing, and environmental control with minimal intervention.
+Traditional soil assessment is reactive and slow. Continuous, real-time monitoring via IoT sensors—moisture, pH, nutrient (NIR), EC for fertilizer salts, and plant stress proxies like temperature and humidity—enables timely intervention and optimal resource use. Low-cost hardware (e.g., <\$20/probe, <\$10 Zigbee radios) makes distributed sensor networks practical for home users. These compact devices provide immediate feedback, fostering proactive soil care and minimizing input waste.
 
-Where existing agricultural research has largely focused on scaling up efficiency for large farms, this study identifies the \emph{reverse challenge}: scaling down these technologies to make them usable and cost-effective for non-expert users. The approach highlights:
+\section{Networking: Zigbee for Home Gardens}
+
+Zigbee’s low-power, local wireless communication is well-suited to household plots, offering mesh networking, low module cost, and no subscription fees. Sensors and actuators (pumps, fans) communicate efficiently, and the flexible mesh topology allows easy expansion to new zones without complex rewiring or reliance on cloud connectivity.
+
+\section{From Data to Action: ML and AI Integration}
+
+Continuous sensor data streams are translated by lightweight ML models on edge gateways into actionable insights—detecting trends in soil or plant health, predicting irrigation and nutrient needs, classifying soil status, and identifying anomalies. The AI decision layer coordinates these outputs, triggering pumps, fans, or fertilizer recommendations at the optimal time, establishing a \emph{closed-loop system} for sustainable, hands-off gardening.
+
+\section{Home-Scale Applications and Outcomes}
+
+This synergistic approach enables:
 \begin{itemize}
-\item Automation and optimal decisions: AI systems not only collect data but act on it in real-time, e.g., triggering irrigation or recommending soil amendments before problems escalate.
-\item Feasibility and accessibility: By selecting sensors and protocols (e.g., Zigbee, low-cost pH or NIR probes) that are inexpensive (<\$20 per node) and compatible with microcontrollers, the system can be deployed without specialist expertise.
-\item Affordability and sustainability: Continuous monitoring minimizes waste of inputs (water, fertilizer, energy), while supporting practices such as no-till gardening, organic soil amendments, and climate-friendly cultivation.
+	\item Smart irrigation based on real-time drying prediction rather than fixed schedules.
+	\item Automated compost or fertilizer guidance, reducing nutrient waste and runoff.
+	\item Simple climate regulation in hobby greenhouses using affordable sensor-triggered ventilation.
+	\item User-friendly restoration and rotation recommendations with clear, actionable feedback.
 \end{itemize}
-The contribution is twofold: (1) it provides a blueprint for \emph{adapting precision agriculture into a home-garden context} that is both practical and affordable, and (2) it proposes actionable, measurable workflows and metrics for deployment and evaluation.
-
-In this way, the paper advances the argument that precision agriculture is no longer limited to industrial farms: PA is becoming a reality for the home gardener, enabled by the integration of IoT, edge-ML, and AI into a simple, low-cost, and scalable framework.
-
-
-\subsection{Data Collection and Monitoring}
-
-Real-time monitoring allows real-time responses, or at least continual monitoring and collection so that the best decision (via ML  and  AI  and  human thinking) can be made at the appropriate time. The idea is that accurate continuous monitoring allows the 5th ag revolution philosophy to minimize costs by staying sensitive to changing environmental conditions, optimizing to using only what's needed when needed, a movement away from resource-heavy practices, away from waste that shows up negatively on the environment.
-
-\subsection{Sensors}
-
-Traditional soil assessment is \emph{slow and reactive} — it depends on lab-based, periodic sampling. Home gardeners rarely have easy lab access, so problems are often noticed too late.
-\emph{Novelty:} With IoT-based sensors, monitoring becomes continuous and real-time. This solves the “not proactive” problem: instead of waiting for delayed results, sensors stream data continuously, giving early warnings and opportunities to act.
-
-Recent work (Upreti et al., 2024; Mansoor et al., 2025) shows that low-cost microcontrollers and wireless networks such as Zigbee make this feasible at small scale. Unlike cloud-heavy deployments in industrial agriculture, edge gateways can aggregate data and run lightweight ML locally, cutting cost and reducing latency. For home farmers, this makes proactive soil care achievable with \emph{inexpensive “dumb” sensors} linked together.
-
-\subsection{Moisture}
-Capacitive soil dielectric sensors are low-cost, wireless, and low-power. They can be deployed at multiple depths to monitor real-time irrigation needs.
-\begin{itemize}
-	\item Novelty: Instead of manual watering schedules, continuous moisture sensing supports automated irrigation and reduces waste.
-	\item Example: <\$10 capacitive probes linked to an ESP32/Zigbee node trigger a small water pump only when soil falls below a set threshold.
-\end{itemize}
-
-\subsection{pH}
-Soil pH is a critical factor for nutrient absorption. Real-time pH sensors mitigate soil acidification by optimizing nitrogen use and enabling immediate adjustments.
-\begin{itemize}
-	\item Novelty: Shifts from after-the-fact lab tests to proactive corrections. Supports sustainable practices like no-till farming by maintaining balanced conditions.
-	\item Example: Simple electrochemical pH probes in raised beds can alert a gardener when soil drifts too acidic, prompting lime addition.
-\end{itemize}
-
-\subsection{Nutrient Sensors}
-Nutrient sensors measure nitrogen, phosphorus, and potassium (NPK). High-cost optical systems exist, but emerging low-cost NIR sensors are showing promise.
-\begin{itemize}
-	\item Novelty: Brings precision fertilization, once reserved for industrial farms, into a garden setting.
-	\item Example: NIR-based handheld devices (currently ~\$100) can be shared among community gardens to recommend compost vs. fertilizer inputs.
-\end{itemize}
-
-\subsection{Soil Pollutant Sensors}
-Pollutant sensors detect excess salts, pesticides, or metals that degrade soil health. Compact EC (electrical conductivity) sensors are the most practical option at small scale.
-\begin{itemize}
-	\item Novelty: Home gardeners can detect fertilizer buildup that stresses plants — something usually only studied at industrial scale.
-	\item Example: <\$15 EC probes identify salt accumulation from repeated synthetic fertilizer use, prompting a soil flush with clean water.
-\end{itemize}
-
-\subsection{Plant Stress Sensors}
-Plant stress sensors track responses to drought, pests, or heat stress. Most advanced systems (hyperspectral imaging, eco-acoustics) remain experimental, but simple proxies like leaf temperature and chlorophyll fluorescence are becoming feasible.
-\begin{itemize}
-	\item Novelty: Detects stress before visible symptoms, enabling preventive action at home scale.
-	\item Example: Off-the-shelf thermistors (DS18B20, <\$5) embedded in soil or leaf clips give early warnings of heat stress; SHT31/SHT4x sensors combine air temperature and humidity for <\$10.
-\end{itemize}
-
-\section{Zigbee}
-
-Zigbee enables \emph{low-power, short-range radio communication} between IoT nodes, including those embedded directly in plant beds or small livestock enclosures. Unlike wide-area networks such as LoRaWAN or mobile IP systems, Zigbee avoids the overhead of cell towers, roaming protocols, and subscription costs. A Zigbee network can survive and run entirely self-contained.
-
-Novelty: While most precision agriculture research focuses on long-range communication for large farms, Zigbee offers a more suitable option for \emph{1–10 acre home gardens} where distances rarely exceed 100 meters. Its mesh capability extends coverage by allowing each node to forward messages, ensuring reliability even in complex layouts like orchards or coops.
-
-\begin{itemize}
-	\item \emph{Lower Cost:} Zigbee modules are <\$10 and require no carrier subscription, making them accessible for hobbyists and small-scale growers.
-	\item \emph{Lower Power:} Nodes can sleep and wake on schedule, reducing duty cycles and enabling battery or solar operation.
-	\item \emph{Flexibility:} Supports hundreds of devices, so soil sensors, feeders, and environmental monitors can all share the same network.
-\end{itemize}
-
-How we’ll use it:
-\begin{itemize}
-	\item Soil sensors (moisture, pH, temperature) communicate readings to a Zigbee gateway indoors, which runs edge ML models.
-	\item Actuators (pumps, relays, fans) can be triggered through Zigbee messages without needing Wi-Fi or cloud links.
-	\item Mesh topology allows adding new garden zones (beds, compost piles, chicken coops) incrementally without rewiring.
-\end{itemize}
-
-\emph{Novel contribution for home scale:} Zigbee allows us to implement a \emph{low-cost, resilient, and subscription-free precision agriculture network}. It reduces the dependence on cloud or mobile networks, while still enabling enough reliability and range for typical household plots. This makes continuous monitoring and actuation feasible without scaling up to expensive long-range solutions.
-
-\section{Integration of IoT, ML, AI: Decision Making}
-
-All of these sensors share one novel theme: \emph{they generate real-time data streams}. This enables not only monitoring, but also real-time adjustments to inputs or predictions of the best time to take action.
-
-Traditional systems detect problems only after they occur; in contrast, IoT sensors combined with lightweight ML models provide \emph{continuous data streams}, and AI layers translate these into \emph{timely, actionable decisions}. This approach directly addresses the challenge of being “not proactive” in small-scale farming, where delayed responses often mean yield losses or resource waste.
-
-IoT makes this possible by transmitting sensor data via \emph{short-range, low-power protocols} like Zigbee. This removes dependence on cloud or mobile networks, lowering cost and improving responsiveness.
-
-\subsection{ML — Feature Extraction}
-
-Machine Learning reduces raw sensor streams to \emph{interpretable features} that summarize system states:
-\begin{itemize}
-	\item \emph{Soil:} pH drift, nutrient (EC) trends, root-zone temperature, moisture gradients.
-	\item \emph{Plant:} canopy light fraction, leaf wetness, heat-stress degree hours.
-	\item \emph{Livestock:} feeder weight change rate, intake frequency, day/night ratio.
-\end{itemize}
-Novelty: These features are generated \emph{locally and in real time}, enabling decisions to be made before conditions deteriorate.
-
-\subsection{ML — Classification}
-
-Low-cost classifiers such as \emph{Support Vector Machines (SVM)} or \emph{Random Forests} categorize soil and crop conditions:
-\begin{itemize}
-\item \emph{Soil health classification:} Poor / Average / Good.
-\item \emph{Crop/bed status:} Dry / Adequate / Wet, with stress/no-stress indicators.
-\item \emph{Livestock behavior:} Normal / Low intake / Irregular pattern.
-\end{itemize}
-
-Novelty: Lightweight ML (e.g., SVM >94\% accuracy in soil health classification) can run on edge gateways (Raspberry Pi/ESP32), eliminating the need for cloud infrastructure.
-
-\subsection{ML — Prediction}
-Forecasting models anticipate when thresholds will be crossed:
-\begin{itemize}
-\item \emph{Moisture drying time:} predict hours to irrigation need.
-\item \emph{Nutrient degradation:} estimate days to amendment requirement.
-\item \emph{Temperature/ventilation:} forecast heat stress in coops/greenhouses.
-\end{itemize}
-Novelty: Instead of reacting to thresholds, the system acts \emph{proactively}, scheduling irrigation or amendments at the optimal time to minimize stress and maximize yield.
-
-\subsection{ML — Anomaly Detection}
-Unsupervised ML detects unusual patterns:
-\begin{itemize}
-\item \emph{Soil leak detection:} moisture spikes without valve activity.
-\item \emph{Nutrient anomalies:} EC surges not explained by fertilization.
-\item \emph{Animal anomalies:} abrupt intake drop relative to baseline.
-\end{itemize}
-Novelty: Early anomaly alerts enable rapid correction before waste or harm occurs.
-
-\subsection{AI — Decision Layer}
-The AI layer translates ML outputs into \emph{direct recommendations or actions}:
-\begin{itemize}
-\item \emph{Irrigation policy:} actuate pumps when forecasts predict drying within 12–18 h.
-\item \emph{Soil restoration planner:} recommend compost/cover crops when soil class degrades.
-\item \emph{Crop rotation advisor:} suggest legume rotation when soil fatigue is detected.
-\item \emph{Livestock scheduler:} adjust feeding cycles from predicted intake.
-\end{itemize}
-Novelty: AI integrates multiple ML outputs into \emph{optimal, context-aware decisions}—balancing short-term resource use with long-term soil restoration.
-
-\subsection{Why This Is Novel}
-\begin{itemize}
-\item \emph{Real-time:} Traditional soil management is slow and reactive; this system produces continuous, actionable data.
-\item \emph{Proactive:} Forecasts anticipate problems, allowing \emph{optimal timing} of irrigation and soil amendments.
-\item \emph{Feasible at home scale:} Uses \emph{low-cost Zigbee sensors}  and  \emph{lightweight ML models} deployable on small gateways.
-\item \emph{Actionable AI layer:} Goes beyond classification to deliver \emph{direct interventions or clear recommendations} for farmers.
-\end{itemize}
-In research context: This integration of IoT, ML, and AI demonstrates a pathway toward \emph{real-time, resource-efficient farming} that is both \emph{scalable} for large agriculture and \emph{feasible} for small home gardens.
-
-\section{AI - Decision Layer}
-
-While ML provides classification and prediction, the \emph{AI layer} operationalizes these insights into coordinated decision-making.
-Hoque and Padhiyar (2024) stress that IoT–AI systems enable not only monitoring but also \emph{closed-loop actuation}: irrigation valves can be triggered automatically, greenhouse fans activated, and nutrient delivery adjusted without human intervention. This elevates monitoring to \emph{real-time regulation}, ensuring that optimal soil and plant conditions are actively maintained.
-
-\subsection{Examples for Home-Scale Use}
-
-\begin{itemize}
-	\item \emph{Irrigation scheduling:} Instead of fixed watering schedules, AI agents use soil moisture and temperature data to trigger watering only when stress is imminent. Upreti et al. (2024) demonstrated that IoT and ML models predict drying rates with high accuracy, making it feasible to irrigate \emph{only when needed}. For a home gardener, this may simply be a Zigbee-enabled moisture probe connected to a pump that waters potted plants once soil drops below a set threshold.
-	\item \emph{Nutrient management:} Sishodia et al. (2020) show that nutrient sensors and predictive models can optimize fertilizer timing, reducing runoff and cost. At home scale, AI rules can recommend adding compost or diluted organic fertilizer when real-time nutrient levels decline, extending soil life and supporting no-till practices.
-	\item \emph{Greenhouse/climate control:} AI can actuate small fans, vents, or humidity sensors to stabilize conditions in a hobby greenhouse. This mimics industrial systems, but scaled down to <\$20 IoT nodes that act when temperature exceeds crop thresholds.
-	\item \emph{Soil restoration planning:} Building on degradation predictions, AI systems can issue “traffic light” recommendations — e.g., Poor soil: add compost this week, Average: rotate with beans next season. This makes actionable soil restoration feasible for non-experts.
-\end{itemize}
-
-\section{AI and ML Synergy}
-
-Hoque and Padhiyar (2024) argue that the true impact lies in combining ML’s \emph{prediction} with AI’s \emph{decision orchestration}:
-\begin{itemize}
-\item ML handles \emph{feature extraction} (e.g., spectral indices, soil nutrient depletion curves) and \emph{prediction} (e.g., drying rates, soil fertility loss).
-\item AI integrates these signals into \emph{multi-factor decisions}, balancing water use, fertilizer efficiency, and restoration goals.
-\end{itemize}
-
-Upreti et al. (2024) confirmed that real-time IoT and ML soil monitoring enables \emph{continuous adjustment of irrigation and nutrient inputs}, cutting delays inherent in lab-based testing.
-Sishodia et al. (2020) further highlight how predictive indices (e.g., Leaf Area Index, Plant Available Water) can be integrated into AI pipelines for \emph{optimal irrigation scheduling} — insights that can be adapted from remote sensing to low-cost proximity sensors in home gardens.
-
-\section{Research Contribution}
-
-This layered integration demonstrates novelty in three clear ways:
-\begin{itemize}
-\item \emph{From real-time to optimal:} Instead of merely alerting gardeners, AI systems act at the right moment — preventing stress before it occurs.
-\item \emph{Closed-loop control:} Linking sensors → ML predictions → AI decisions → actuation creates a \emph{feedback system} previously unavailable to small-scale farmers.
-\item \emph{Feasibility for home use:} What began as large-scale precision agriculture (Hoque and Padhiyar, 2024; Sishodia et al., 2020) can now be adapted to \emph{low-cost, Zigbee-enabled edge nodes} and simplified outputs (traffic-light indicators, automatic pumps), as Upreti et al. (2024) showed with lightweight ML deployment.
-\end{itemize}
-Together, these studies show that \emph{AI-driven decision-making in soil health is not only feasible but transformative}: reducing waste, conserving inputs, and providing home gardeners with the kind of real-time optimization once limited to industrial-scale farms.
-
-\section{AI and Smart Applications - From Prediction to Action}
-
-Machine Learning (ML) reduces raw sensor data to actionable predictions, while Artificial Intelligence (AI) extends this by orchestrating real-time decisions and actuation.
-The novelty lies in moving beyond monitoring to \emph{closed-loop control}: sensors detect soil or plant conditions, ML models predict outcomes such as nutrient degradation or soil drying, and AI makes \emph{optimal decisions} to trigger irrigation, nutrient amendments, or climate adjustments at the right time.
-
-\subsection{Real-Time Regulation}
-
-Hoque and Padhiyar (2024) emphasize that IoT–AI systems transform monitoring into \emph{continuous regulation}: irrigation valves, greenhouse fans, or fertigation pumps can be activated automatically, reducing human workload while ensuring soil and plant conditions remain within optimal ranges.
-Upreti et al. (2024) demonstrated that real-time IoT and ML soil monitoring can accurately forecast soil drying, enabling water to be applied \emph{only when needed}, a shift from reactive watering to proactive conservation.
-
-\subsection{Home-Scale Applications}
-
-\begin{itemize}
-\item \emph{Smart Irrigation:} A Zigbee-enabled moisture probe linked to an ESP32 node can trigger a pump when soil moisture falls below a threshold. This adapts industrial “model predictive irrigation” (Bwambaale et al., 2022) to a <\$20 home setup, reducing waste and preventing stress.
-\item \emph{Nutrient Management:} Sishodia et al. (2020) showed how predictive indices (e.g., Leaf Area Index, Plant Available Water) guide fertilization. At home scale, AI rules can recommend compost addition or diluted organic fertilizer when nutrient sensors detect decline, preventing over-application and runoff.
-\item \emph{Greenhouse/Environment Control:} AI-driven rules can actuate small fans, vents, or heaters to stabilize hobby greenhouse conditions. For instance, a thermistor probe connected to a Zigbee node can trigger ventilation when temperature exceeds crop-specific thresholds.
-\item \emph{Soil Restoration Guidance:} Instead of lab-intensive soil reports, AI systems can issue “traffic-light” style recommendations (Poor / Average / Good soil), paired with suggestions such as crop rotation, organic amendment, or cover cropping.
-\end{itemize}
-
-\subsection{Novelty and Contribution}
-This integrated approach demonstrates novelty in three dimensions:
-\begin{itemize}
-\item \emph{From real-time to optimal decisions:} Monitoring no longer ends at data collection; actions are triggered at the right moment, preventing stress before it occurs.
-\item \emph{Closed-loop feedback:} Linking \emph{sensors → ML predictions → AI orchestration → actuation} creates a dynamic feedback system that continually optimizes soil and crop conditions.
-\item \emph{Feasibility for small-scale use:} What began as large-scale precision agriculture (Hoque and Padhiyar, 2024; Sishodia et al., 2020) can now be adapted with low-cost, Zigbee-enabled nodes, lightweight ML models such as SVM (~94\% accuracy in soil classification, Upreti et al., 2024), and simplified decision outputs usable by home gardeners.
-\end{itemize}
+Recent studies confirm that such systems, previously exclusive to industrial farms, now fit seamlessly in home environments thanks to edge computing, affordable hardware, and robust local networking.
 
 \section{Conclusion}
-AI and ML integration enables \emph{real-time, optimal, and automated soil management}, conserving inputs, reducing waste, and making precision agriculture approaches viable even for the home garden.
 
-\section{Acknowledgments}
+Affordable IoT and AI-driven systems make precision agriculture a reality for home gardeners. The integration of real-time sensors, edge ML, and AI orchestrates proactive soil and plant management, reducing costs and environmental impact in small, accessible garden settings.
+
+
+= Relevance
+
+The growing demand for sustainable and efficient farming introduced by population increases, global climate change, and supply chain disruptions makes local sustainable farming more pressing than ever. However, the issues of power consumption and latency exist for virtually all IoT systems.  
+
+The frequent problems faced in many Wireless Sensor and Actuator Networks (WSANs) revolve around power and computational restraints. Traditionally, with the onset of cloud computing, the generally accepted model was to offload computation to the cloud. However, in the case of home farming, concerns of latency and power consumption become more pronounced. Offloading to a nearby fog device or using a Zigbee network could account for the computational capabilities that sensors and actuators are unable to handle, while still being close enough in proximity to reduce latency concerns.
+
+= Advantages in Power and Latency
+
+Similar analysis was done by Panday [1] in a study pertaining to soil analysis. The findings point to reduced latency and power consumption when implementing a fog device. We have expanded this to compare these findings to the latency and power demands of cloud and TinyML systems.
+
+#figure(caption: [_Comparison of TinyML, Edge (Gateway), and Cloud._], kind: table)[
+#text(size: 8pt)[
+  #table(
+    columns: (1fr, 1fr, 1fr, 1fr),
+    align: left,
+    stroke: 0.5pt + luma(220),
+    inset: 3pt,
+    table.header(
+      [*Criterion*], [*TinyML Sensor*], [*EDGE (Gateway)*], [*Cloud*]
+    ),
+    [Latency / timeliness], [Good (local, limited)], [Excellent: < 100 ms, multi-sensor], [Variable (200 msÐseconds)],
+    [Power use], [Higher (ML + radio)], [Best: sensors sleep, gateway mains], [Sensors must stay chatty, added power of cloud consumption],
+    [Model complexity], [Very limited (RAM/flash)], [Moderate (RF, SVM, ARIMA feasible)], [Any size],
+    [Updates], [Hard (reflash nodes)], [Easy (one box to update)], [Easy, but depends on net],
+    [Connectivity], [None], [None (local-first)], [High dependency],
+    [Fit for 1Ð10 acres], [Overkill], [Best choice], [Overkill]
+  )
+]
+]
+
+These findings, sourced partly from Panday [1], demonstrate how fog-based models can outperform TinyML and cloud-based models across multiple domains. Particularly, edge-based models are shown to perform with under 100 ms of latency, compared to expected latency of over 200 ms for cloud-based devices.
+
+= Power Comparisons
+
+Additionally, further benefits in power consumption can be seen with an edge-based ML paradigm. Bonomi [2] analyzes the benefits of pairing an ML model with a fog device in a WSAN-based system. In this case, ML models can learn when actuators and sensors need to perform a task, and when they are allowed to rest.  
+
+There was a noticeable block in advancement of systems that introduced actuators, since anything that goes beyond sensing and tracking introduced power requirements, greatly increasing the consumption of power. They note that the introduction of fog devices can help relieve the power shortages that are presented in more complex architectures.
+
+
 \balance{}
 
 \section{References Format}
