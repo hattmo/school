@@ -58,6 +58,7 @@
 \usepackage{color}
 \usepackage{booktabs}
 \usepackage{textcomp}
+\usepackage{dblfloatfix}
 
 % Some optional stuff you might like/need.
 \usepackage{microtype}        % Improved Tracking and Kerning
@@ -173,19 +174,19 @@
 
 Precision agriculture and TinyML have transformed commercial farming, but their extension to home and backyard gardens remains limited. This paper demonstrates that by leveraging low-cost IoT sensors and edge-ML models, precision agriculture can now be \emph{approachable, practical, and sustainable} for home gardeners within constraints of time, budget, and minimal monitoring. The framework supports automation (real-time irrigation, nutrient management), accessibility (easy deployment for non-experts), and sustainability (waste reduction, resource efficiency), offering a scalable blueprint for home-scale smart agriculture.
 
-\section{IoT Sensing and Monitoring}
+\section{Novelty}
 
 Traditional soil assessment is reactive and slow. Continuous, real-time monitoring via IoT sensors—moisture, pH, nutrient (NIR), EC for fertilizer salts, and plant stress proxies like temperature and humidity—enables timely intervention and optimal resource use. Low-cost hardware (e.g., <\$20/probe, <\$10 Zigbee radios) makes distributed sensor networks practical for home users. These compact devices provide immediate feedback, fostering proactive soil care and minimizing input waste.
 
-\section{Networking: Zigbee for Home Gardens}
+\subsection{Networking: Zigbee for Home Gardens}
 
 Zigbee’s low-power, local wireless communication is well-suited to household plots, offering mesh networking, low module cost, and no subscription fees. Sensors and actuators (pumps, fans) communicate efficiently, and the flexible mesh topology allows easy expansion to new zones without complex rewiring or reliance on cloud connectivity.
 
-\section{From Data to Action: ML and AI Integration}
+\subsection{From Data to Action: ML and AI Integration}
 
 Continuous sensor data streams are translated by lightweight ML models on edge gateways into actionable insights—detecting trends in soil or plant health, predicting irrigation and nutrient needs, classifying soil status, and identifying anomalies. The AI decision layer coordinates these outputs, triggering pumps, fans, or fertilizer recommendations at the optimal time, establishing a \emph{closed-loop system} for sustainable, hands-off gardening.
 
-\section{Home-Scale Applications and Outcomes}
+\subsection{Home-Scale Applications and Outcomes}
 
 This synergistic approach enables:
 \begin{itemize}
@@ -196,59 +197,78 @@ This synergistic approach enables:
 \end{itemize}
 Recent studies confirm that such systems, previously exclusive to industrial farms, now fit seamlessly in home environments thanks to edge computing, affordable hardware, and robust local networking.
 
-\section{Conclusion}
+\section{Relevance}
+\begin{table*}[btp]
+	\centering
+	\begin{tabular}{l p{4cm} p{4cm} p{4cm}}
+		& \multicolumn{3}{c}{\textit{Comparison}} \\
+		\cmidrule(r){2-4}
+		{\small\textit{Criterion}}
+		& {\small\textit{TinyML Sensor}}
+		& {\small\textit{EDGE (Gateway)}}
+		& {\small\textit{Cloud}} \\
+		\midrule
+		Latency / timeliness & Good (local, limited) & Excellent: < 100 ms, multi-sensor & Variable (200 ms) \\
+		\midrule
+		Power use & Higher (ML + radio) & Best: sensors sleep, gateway mains & Sensors must stay chatty, added power of cloud consumption \\
+		\midrule
+		Model complexity & Very limited (RAM/flash) & Moderate (RF, SVM, ARIMA feasible) & Any size \\
+		\midrule
+		Updates & Hard (reflash nodes) & Easy (one box to update) & Easy, but depends on net \\
+		\midrule
+		Connectivity & None & None (local-first) & High dependency \\
+		\midrule
+		Fit for 1-10 acres & Overkill & Best choice & Overkill \\
+	\end{tabular}
+\end{table*}
 
-Affordable IoT and AI-driven systems make precision agriculture a reality for home gardeners. The integration of real-time sensors, edge ML, and AI orchestrates proactive soil and plant management, reducing costs and environmental impact in small, accessible garden settings.
-
-
-= Relevance
-
-The growing demand for sustainable and efficient farming introduced by population increases, global climate change, and supply chain disruptions makes local sustainable farming more pressing than ever. However, the issues of power consumption and latency exist for virtually all IoT systems.  
+The growing demand for sustainable and efficient farming introduced by population increases, global climate change, and supply chain disruptions makes local sustainable farming more pressing than ever. However, the issues of power consumption and latency exist for virtually all IoT systems.
 
 The frequent problems faced in many Wireless Sensor and Actuator Networks (WSANs) revolve around power and computational restraints. Traditionally, with the onset of cloud computing, the generally accepted model was to offload computation to the cloud. However, in the case of home farming, concerns of latency and power consumption become more pronounced. Offloading to a nearby fog device or using a Zigbee network could account for the computational capabilities that sensors and actuators are unable to handle, while still being close enough in proximity to reduce latency concerns.
 
-= Advantages in Power and Latency
+\subsection{Advantages in Power and Latency}
 
 Similar analysis was done by Panday [1] in a study pertaining to soil analysis. The findings point to reduced latency and power consumption when implementing a fog device. We have expanded this to compare these findings to the latency and power demands of cloud and TinyML systems.
 
-#figure(caption: [_Comparison of TinyML, Edge (Gateway), and Cloud._], kind: table)[
-#text(size: 8pt)[
-  #table(
-    columns: (1fr, 1fr, 1fr, 1fr),
-    align: left,
-    stroke: 0.5pt + luma(220),
-    inset: 3pt,
-    table.header(
-      [*Criterion*], [*TinyML Sensor*], [*EDGE (Gateway)*], [*Cloud*]
-    ),
-    [Latency / timeliness], [Good (local, limited)], [Excellent: < 100 ms, multi-sensor], [Variable (200 msÐseconds)],
-    [Power use], [Higher (ML + radio)], [Best: sensors sleep, gateway mains], [Sensors must stay chatty, added power of cloud consumption],
-    [Model complexity], [Very limited (RAM/flash)], [Moderate (RF, SVM, ARIMA feasible)], [Any size],
-    [Updates], [Hard (reflash nodes)], [Easy (one box to update)], [Easy, but depends on net],
-    [Connectivity], [None], [None (local-first)], [High dependency],
-    [Fit for 1Ð10 acres], [Overkill], [Best choice], [Overkill]
-  )
-]
-]
-
 These findings, sourced partly from Panday [1], demonstrate how fog-based models can outperform TinyML and cloud-based models across multiple domains. Particularly, edge-based models are shown to perform with under 100 ms of latency, compared to expected latency of over 200 ms for cloud-based devices.
 
-= Power Comparisons
+\subsection{Power Comparisons}
 
-Additionally, further benefits in power consumption can be seen with an edge-based ML paradigm. Bonomi [2] analyzes the benefits of pairing an ML model with a fog device in a WSAN-based system. In this case, ML models can learn when actuators and sensors need to perform a task, and when they are allowed to rest.  
+Additionally, further benefits in power consumption can be seen with an edge-based ML paradigm. Bonomi [2] analyzes the benefits of pairing an ML model with a fog device in a WSAN-based system. In this case, ML models can learn when actuators and sensors need to perform a task, and when they are allowed to rest.
 
 There was a noticeable block in advancement of systems that introduced actuators, since anything that goes beyond sensing and tracking introduced power requirements, greatly increasing the consumption of power. They note that the introduction of fog devices can help relieve the power shortages that are presented in more complex architectures.
 
+\section{Feasibility}
+
+From Wolfert et al.’s review of smart farming in agriculture, we can gain insights about the constraints that a smart home garden must overcome before implementation [1]. According to the review, smart farming needs to reconfigure under changing garden conditions, pull in external data, meet data-governance requirements, and rely on interoperability/standards for ecosystem uptake. Because a smart home garden is fundamentally similar to smart farming but on a smaller scale, those constraints likely apply. Below is a five-year plan to address the considerations identified in the review.
+
+\subsection{Five Year Plan}
+
+\begin{itemize}
+
+\item Year 1 - Real-time CPS loop using edge or fog. The smart garden must react to real-time events and adjust when conditions change. We will build a simple sensing, decision, and actuation loop on a local hub and check that it responds correctly and safely in common situations such as heat spikes, heavy rain, shifting shade, and sensor faults.
+
+\item Year 2 - External data and robustness. Because smart garden operation depends on external data such as weather and benchmarks, it must keep functioning when feeds are missing, late, or noisy. We will integrate these feeds, add input checks, use caching and fallback rules, log and monitor data quality, and keep core control running locally during outages.
+
+\item Year 3 - Governance and security hardening. Deployment requires clear data ownership and usage terms, strong privacy protections, and security safeguards before broader trials. We will define who can see, keep, and use each data type, set up consent and notices, restrict third-party access, add authentication and encryption for stored and in-transit data, and complete a security review.
+
+\item Year 4 - Pilots and ecosystem fit. Smart garden adoption and reliability must be proven in real homes while platform ecosystems keep changing. We will run pilots in several settings such as balcony pots, backyard beds, and small greenhouses to measure reliability and user satisfaction, integrate with common home hubs where it makes sense, and refine setup and maintenance based on feedback.
+
+\item Year 5 - Interoperability and metadata for scale. To make the smart garden system and its data reusable, they must work with other systems and follow clear standards. We will finish an open data schema, spell out the required metadata such as timestamps, location, calibration, units, and which standards are used, and publish simple API and integration guides so others can replicate and extend the system.
+
+\end{itemize}
+
+\section{Conclusion}
+
+Affordable IoT and AI-driven systems make precision agriculture a reality for home gardeners. The integration of real-time sensors, edge ML, and AI orchestrates proactive soil and plant management, reducing costs and environmental impact in small, accessible garden settings.
 
 \balance{}
 
 \section{References Format}
 gonline videos~\cite{psy:gangnam} is given here.
-% BALANCE COLUMNS
-\balance{}
 
-% REFERENCES FORMAT
-% References must be the same font size as other body text.
+% \balance{}
+
 \bibliographystyle{SIGCHI-Reference-Format}
 \bibliography{sample}
 
