@@ -135,27 +135,26 @@
 
 \title{\plaintitle}
 
-\numberofauthors{5}
+\numberofauthors{6}
 \author{%
   \alignauthor{Matthew Howard\\
-    \affaddr{Odenton MD, USA}\\
+    \affaddr{Odenton, MD}\\
     \email{mshowar4@asu.edu}}\\
-  \alignauthor{Leave Authors Anonymous\\
-    \affaddr{for Submission}\\
-    \affaddr{City, Country}\\
-    \email{e-mail address}}\\
-  \alignauthor{Leave Authors Anonymous\\
-    \affaddr{for Submission}\\
-    \affaddr{City, Country}\\
-    \email{e-mail address}}\\
-  \alignauthor{Leave Authors Anonymous\\
-    \affaddr{for Submission}\\
-    \affaddr{City, Country}\\
-    \email{e-mail address}}\\
-  \alignauthor{Leave Authors Anonymous\\
-    \affaddr{for Submission}\\
-    \affaddr{City, Country}\\
-    \email{e-mail address}}\\
+  \alignauthor{Eshwar Pitchiah\\
+    \affaddr{Queen Creek, AZ}\\
+    \email{epitchia@asu.edu}}\\
+  \alignauthor{Carson Darling\\
+    \affaddr{Scottsdale, AZ}\\
+    \email{cdarlin1@asu.edu}}\\
+  \alignauthor{Priyananda Vangala\\
+    \affaddr{St. Louis, MO}\\
+    \email{pvangal1@asu.edu}}\\
+  \alignauthor{Trevor Webster\\
+    \affaddr{VT}\\
+    \email{twebst10@asu.edu}}\\
+  \alignauthor{Calvin Peng}\\
+    \affaddr{San Francisco, CA}\\
+    \email{ypeng97@asu.edu}
 }
 
 \maketitle
@@ -164,17 +163,19 @@
 	This is the abstract
 \end{abstract}
 
-\category{H.5.m.}{Information Interfaces and Presentation
-  (e.g. HCI)}{Miscellaneous} \category{See
-  \url{http://acm.org/about/class/1998/} for the full list of ACM
-  classifiers. This section is required.}{}{}
-
-\keywords{\plainkeywords}
 \section{Introduction}
 
-Precision agriculture and TinyML have transformed commercial farming, but their extension to home and backyard gardens remains limited. This paper demonstrates that by leveraging low-cost IoT sensors and edge-ML models, precision agriculture can now be \emph{approachable, practical, and sustainable} for home gardeners within constraints of time, budget, and minimal monitoring. The framework supports automation (real-time irrigation, nutrient management), accessibility (easy deployment for non-experts), and sustainability (waste reduction, resource efficiency), offering a scalable blueprint for home-scale smart agriculture.
+\section{Significance}
+
+Home garden smart farming is important because it empowers individuals and households to use technology for producing food in a sustainable and efficient way. By integrating sensors, automated irrigation, and small-scale data analytics, home gardeners can monitor soil moisture, light levels, and crop health to optimize input use and reduce waste\cite{wolfert2017big}. These systems not only conserve water and energy but also improve yields in limited spaces, which is especially valuable in urban areas. In addition, applying big data and smart tools at the home garden level increases resilience by enabling people to adapt to changing weather conditions and reduce dependence on industrial supply chains\cite{elbilali2018smart}.
+
+\subsection{Social Impact}
+
+Beyond efficiency, home garden smart farming is significant for its social and environmental impacts. It allows households to grow healthier, pesticide-free food while contributing to local food security and sustainability goals \cite{elbilali2018smart}. By scaling down principles of smart farming, individuals can participate in the broader shift toward data-driven agriculture and sustainable development. Home garden systems also serve as educational platforms, raising awareness about resource management, food safety, and the role of technology in creating resilient food systems\cite{wolfert2017big}. In this way, home garden smart farming links personal well-being with global sustainability by combining innovation, self-sufficiency, and environmental care.
 
 \section{Novelty}
+
+Precision agriculture and TinyML have transformed commercial farming, but their extension to home and backyard gardens remains limited. This paper demonstrates that by leveraging low-cost IoT sensors and edge-ML models, precision agriculture can now be \emph{approachable, practical, and sustainable} for home gardeners within constraints of time, budget, and minimal monitoring. The framework supports automation (real-time irrigation, nutrient management), accessibility (easy deployment for non-experts), and sustainability (waste reduction, resource efficiency), offering a scalable blueprint for home-scale smart agriculture.
 
 Traditional soil assessment is reactive and slow. Continuous, real-time monitoring via IoT sensors—moisture, pH, nutrient (NIR), EC for fertilizer salts, and plant stress proxies like temperature and humidity—enables timely intervention and optimal resource use. Low-cost hardware (e.g., <\$20/probe, <\$10 Zigbee radios) makes distributed sensor networks practical for home users. These compact devices provide immediate feedback, fostering proactive soil care and minimizing input waste.
 
@@ -195,7 +196,7 @@ This synergistic approach enables:
 	\item Simple climate regulation in hobby greenhouses using affordable sensor-triggered ventilation.
 	\item User-friendly restoration and rotation recommendations with clear, actionable feedback.
 \end{itemize}
-Recent studies confirm that such systems, previously exclusive to industrial farms, now fit seamlessly in home environments thanks to edge computing, affordable hardware, and robust local networking.
+Recent studies confirm that such systems, previously exclusive to industrial farms, now fit seamlessly in home environments thanks to edge computing, affordable hardware, and robust local networkinge
 
 \section{Relevance}
 \begin{table*}[btp]
@@ -228,19 +229,29 @@ The frequent problems faced in many Wireless Sensor and Actuator Networks (WSANs
 
 \subsection{Advantages in Power and Latency}
 
-Similar analysis was done by Panday [1] in a study pertaining to soil analysis. The findings point to reduced latency and power consumption when implementing a fog device. We have expanded this to compare these findings to the latency and power demands of cloud and TinyML systems.
+Similar analysis was done pertaining to soil analysis. The findings point to reduced latency and power consumption when implementing a fog device. We have expanded this to compare these findings to the latency and power demands of cloud and TinyML systems.
 
-These findings, sourced partly from Panday [1], demonstrate how fog-based models can outperform TinyML and cloud-based models across multiple domains. Particularly, edge-based models are shown to perform with under 100 ms of latency, compared to expected latency of over 200 ms for cloud-based devices.
+These findings demonstrate how fog-based models can outperform TinyML and cloud-based models across multiple domains. Particularly, edge-based models are shown to perform with under 100 ms of latency, compared to expected latency of over 200 ms for cloud-based devices.
 
 \subsection{Power Comparisons}
 
-Additionally, further benefits in power consumption can be seen with an edge-based ML paradigm. Bonomi [2] analyzes the benefits of pairing an ML model with a fog device in a WSAN-based system. In this case, ML models can learn when actuators and sensors need to perform a task, and when they are allowed to rest.
+Additionally, further benefits in power consumption can be seen with an edge-based ML paradigm. Bonomi\cite{bonomi2012fog},analyzes the benefits of pairing an ML model with a fog device in a WSAN-based system. In this case, ML models can learn when actuators and sensors need to perform a task, and when they are allowed to rest.
 
 There was a noticeable block in advancement of systems that introduced actuators, since anything that goes beyond sensing and tracking introduced power requirements, greatly increasing the consumption of power. They note that the introduction of fog devices can help relieve the power shortages that are presented in more complex architectures.
 
+\section{Soundness}
+
+The soundness of an IoT-enabled gardening system depends on whether the underlying architecture can remain secure, reliable, and adaptable in realistic environments. Prior analyses of IoT systems in agriculture highlight that while the technology is promising, its effectiveness is constrained by vulnerabilities in system design and security protocols. Ray emphasizes that agricultural IoT deployments are often exposed to attack vectors such as eavesdropping on sensor data, denial-of-service against gateways, and unauthorized actuator control, all of which can undermine both trust and operational stability \cite{ray2020security}. For a home garden system, such threats could translate into wasted resources (e.g., malicious overwatering) or damaged plants if functions are hijacked.
+
+Chen builds on these concerns by outlining how end-to-end secure communication frameworks can address such risks in smart farming. Their proposed mechanisms (lightweight cryptographic schemes, mutual authentication between devices, and secure session establishment) form a basis for ensuring data integrity and confidentiality even on resource-constrained IoT nodes \cite{chen2021end}. Applied to home-scale gardening, these principles mean that sensor measurements (such as soil moisture or pH) cannot be tampered with in transit, and actuator commands (such as irrigation triggers) remain authenticated and verifiable.
+
+From a practical standpoint, the soundness of the system is reinforced by three factors. First, the choice of local-first communication (via Zigbee mesh networking and edge-based gateways) minimizes reliance on insecure or high-latency cloud services, reducing exposure to man-in-the-middle attacks \cite{ray2020security}. Second, incorporating lightweight but robust encryption methods ensures that the low-cost IoT devices can still enforce confidentiality and authentication without exhausting power budgets \cite{chen2021end}. Finally, the closed-loop nature of the system—where sensing, decision-making, and actuation occur in a tightly integrated cycle—provides opportunities for anomaly detection. If data streams deviate from expected physical ranges, edge-based ML models can flag potential faults, including those caused by malicious interference.
+
+Taken together, the literature suggests that an IoT gardening application can be considered sound when it adopts security-by-design principles. This includes implementing Ray’s recommendations around resilience against common threats, combined with Chen’s emphasis on end-to-end safeguard mechanisms. By embedding lightweight cryptography, continuous monitoring, and local-first architectures, the system achieves robustness not only in functionality but also in trustworthiness, ensuring that resource efficiency gains are not offset by security risks.
+
 \section{Feasibility}
 
-From Wolfert et al.’s review of smart farming in agriculture, we can gain insights about the constraints that a smart home garden must overcome before implementation [1]. According to the review, smart farming needs to reconfigure under changing garden conditions, pull in external data, meet data-governance requirements, and rely on interoperability/standards for ecosystem uptake. Because a smart home garden is fundamentally similar to smart farming but on a smaller scale, those constraints likely apply. Below is a five-year plan to address the considerations identified in the review.
+From Wolfert et al.’s review of smart farming in agriculture, we can gain insights about the constraints that a smart home garden must overcome before implementation \cite{wolfert2017big}. According to the review, smart farming needs to reconfigure under changing garden conditions, pull in external data, meet data-governance requirements, and rely on interoperability/standards for ecosystem uptake. Because a smart home garden is fundamentally similar to smart farming but on a smaller scale, those constraints likely apply. Below is a five-year plan to address the considerations identified in the review.
 
 \subsection{Five Year Plan}
 
@@ -263,9 +274,6 @@ From Wolfert et al.’s review of smart farming in agriculture, we can gain insi
 Affordable IoT and AI-driven systems make precision agriculture a reality for home gardeners. The integration of real-time sensors, edge ML, and AI orchestrates proactive soil and plant management, reducing costs and environmental impact in small, accessible garden settings.
 
 \balance{}
-
-\section{References Format}
-gonline videos~\cite{psy:gangnam} is given here.
 
 % \balance{}
 
