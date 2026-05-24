@@ -1,0 +1,38 @@
+odom:
+  type: article
+  author:
+    - Odom, William
+    - Hayes, Christopher
+  date: 2014
+  title: "Cross-Domain Synergy: Advancing Jointness"
+  parent:
+    title: "Joint Force Quarterly"
+
+paparo:
+  type: article
+  author: Paparo, Samuel J.
+  date: 2025
+  title: "Statement of Admiral Samuel J. Paparo, Commander, U.S. Indo-Pacific Command, on U.S. Indo-Pacific Command Posture"
+
+swope:
+  type: report
+  author:
+    - Swope, Clayton
+    - Bingen, Kari A.
+    - Young, Makena
+    - Chang, Madeleine
+    - Songer, Stephanie
+    - Tammelleo, Jeremy
+  date: 2024
+  title: "Space Threat Assessment 2024"
+  parent:
+    title: "Center for Strategic and International Studies"
+
+warner:
+  type: article
+  author: Warner, Jeffrey
+  date: 2015
+  title: "To Enable and Sustain: Pacific Air Forces Theater Security Cooperation as a Line of Operation"
+  parent:
+    title: "Air & Space Power Journal"
+
